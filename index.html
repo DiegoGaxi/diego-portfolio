@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diego Gaxiola — Software Engineer, AI-native</title>
+  <meta name="description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos en AgentChain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <span class="masthead__mark">DG—01</span>
+    <nav class="masthead__nav">
+      <a href="#vitrina">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" aria-label="Presentación">
+      <div class="hero__text">
+        <p class="label">01 — SOBRE MÍ</p>
+        <h1 class="hero__name">Diego Gaxiola</h1>
+        <p class="hero__role">Software Engineer <span class="hero__role-accent">· AI-native</span></p>
+        <p class="hero__meta">
+          <span id="years-badge" class="hero__years">7+ años</span> de experiencia full-stack
+          <span id="availability-badge" class="badge badge--available">Disponible para proyectos</span>
+        </p>
+        <div class="hero__ctas">
+          <a href="#vitrina" class="btn btn--primary" data-scroll-target="#vitrina">Ver proyectos</a>
+          <a href="#contacto" class="btn btn--ghost" data-scroll-target="#contacto">Contactar</a>
+        </div>
+      </div>
+      <figure class="hero__portrait">
+        <img class="hero__portrait-img" src="./diego-portrait.jpg" alt="Retrato de Diego Gaxiola" width="400" height="400" />
+        <span class="hero__portrait-frame" aria-hidden="true"></span>
+      </figure>
+    </section>
+
+    <section id="trayectoria" class="timeline-section" aria-label="Trayectoria profesional">
+      <p class="label">02 — TRAYECTORIA</p>
+      <h2 class="section-title">Dónde he construido</h2>
+      <ol id="timeline-list" class="timeline-list" aria-live="polite"></ol>
+    </section>
+
+    <section id="skills" class="skills-section" aria-label="Stack y habilidades">
+      <p class="label">03 — STACK</p>
+      <h2 class="section-title">Con qué trabajo</h2>
+      <div class="skills-grid">
+        <div class="skills-group">
+          <h3>Lenguajes</h3>
+          <div class="chip-row">
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">Java</span>
+            <span class="tech-chip">SQL</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Frameworks</h3>
+          <div class="chip-row">
+            <span class="tech-chip">Hono</span>
+            <span class="tech-chip">React</span>
+            <span class="tech-chip">Spring Boot</span>
+            <span class="tech-chip">Vite</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Cloud / Infra</h3>
+          <div class="chip-row">
+            <span class="tech-chip">AWS</span>
+            <span class="tech-chip">Docker</span>
+            <span class="tech-chip">PostgreSQL</span>
+            <span class="tech-chip">Kafka</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>IA</h3>
+          <div class="chip-row">
+            <span class="tech-chip">Claude API</span>
+            <span class="tech-chip">Agentic Workflows</span>
+            <span class="tech-chip">RAG</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vitrina" class="vitrina-section" aria-label="Vitrina de proyectos">
+      <p class="label">04 — VITRINA</p>
+      <h2 class="section-title">Lo que se ha impreso</h2>
+      <div id="tag-filter" class="chip-row chip-row--filter" role="group" aria-label="Filtrar por tag"></div>
+      <div id="projects-grid" class="projects-grid" aria-live="polite">
+        <div class="skeleton-card skeleton"></div>
+        <div class="skeleton-card skeleton"></div>
+        <div class="skeleton-card skeleton"></div>
+      </div>
+      <p id="empty-state" class="empty-state" hidden>Primer proyecto en camino — la prensa está calentando.</p>
+    </section>
+  </main>
+
+  <div id="project-detail" class="project-detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+    <div class="project-detail__backdrop" data-close></div>
+    <div class="project-detail__panel">
+      <button class="project-detail__close" data-close aria-label="Cerrar detalle">&times;</button>
+      <p class="label" id="detail-eyebrow">LÁMINA</p>
+      <h2 id="detail-title"></h2>
+      <p id="detail-summary" class="project-detail__summary"></p>
+      <p id="detail-description" class="project-detail__description"></p>
+      <div id="detail-tags" class="chip-row"></div>
+      <div class="project-detail__links">
+        <a id="detail-repo" href="#" target="_blank" rel="noopener" class="btn btn--ghost">Repo</a>
+        <a id="detail-demo" href="#" target="_blank" rel="noopener" class="btn btn--primary">Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contacto" class="footer-stamp" aria-label="Contacto">
+    <p class="label">05 — CONTACTO</p>
+    <h2 class="section-title">Hablemos</h2>
+    <div class="footer-stamp__links">
+      <a href="mailto:diego_yesi8@hotmail.com" class="stamp-link">Email</a>
+      <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link">LinkedIn</a>
+      <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link">GitHub</a>
+    </div>
+    <p class="footer-stamp__meta">© <span id="footer-year"></span> Diego Gaxiola — esta vitrina se actualiza automáticamente vía AgentChain, sin redeploy manual.</p>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
