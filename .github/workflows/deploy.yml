@@ -1,8 +1,8 @@
 name: Deploy portfolio to GitHub Pages
 
+# Manual: usar solo si en Settings > Pages eliges Source = "GitHub Actions".
+# Si eliges "Deploy from a branch" (main / root), este workflow no hace falta.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,8 +25,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
