@@ -1,6 +1,8 @@
 // Portafolio de Diego Gaxiola — sitio estático (sin build). Datos desde ./data/*.json.
 const START_DATE = new Date('2018-09-01');
 const AVAILABLE = true;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // En un hosting estático (GitHub Pages) no hay API: se lee el snapshot JSON.
 // Si algún día se sirve con backend Hono, intenta primero la API.
@@ -29,6 +31,114 @@ function yearsSince(start) {
   return years;
 }
 
+/* ---- reveal on scroll (compartido) ---- */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+);
+
+function observeReveals(nodes) {
+  nodes.forEach((n) => revealObserver.observe(n));
+}
+
+/* ---- toast ---- */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.hidden = false;
+  t.textContent = msg;
+  // forzar reflow para que la transición de opacidad se dispare al añadir .show
+  void t.offsetWidth;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* ---- tema claro / oscuro ---- */
+function initTheme() {
+  const toggle = document.getElementById('theme-toggle');
+  const label = toggle?.querySelector('.theme-toggle__label');
+  const sync = () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (toggle) toggle.setAttribute('aria-pressed', String(dark));
+    if (label) label.textContent = dark ? 'NOCHE' : 'DÍA';
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', dark ? '#16140f' : '#f3ead8');
+  };
+  sync();
+  toggle?.addEventListener('click', () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = dark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch {}
+    sync();
+  });
+}
+
+/* ---- scroll: progreso, masthead, nav activa ---- */
+function initScroll() {
+  const bar = document.getElementById('scroll-progress-bar');
+  const masthead = document.getElementById('masthead');
+  const navLinks = Array.from(document.querySelectorAll('.masthead__nav a[data-nav]'));
+  const targets = navLinks
+    .map((a) => ({ link: a, section: document.querySelector(a.getAttribute('href')) }))
+    .filter((t) => t.section);
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+    if (bar) bar.style.width = pct.toFixed(2) + '%';
+    if (masthead) masthead.classList.toggle('masthead--scrolled', doc.scrollTop > 8);
+
+    const line = doc.scrollTop + 90;
+    let active = null;
+    targets.forEach((t) => {
+      if (t.section.offsetTop <= line) active = t.link;
+    });
+    navLinks.forEach((a) => a.classList.toggle('is-active', a === active));
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+}
+
+/* ---- retrato reactivo al puntero (firma de marca) ---- */
+function initPortrait() {
+  const fig = document.getElementById('hero-portrait');
+  if (!fig || reduceMotion || !finePointer) return;
+  fig.addEventListener('pointermove', (e) => {
+    const r = fig.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    const y = ((e.clientY - r.top) / r.height) * 2 - 1;
+    fig.style.setProperty('--px', x.toFixed(3));
+    fig.style.setProperty('--py', y.toFixed(3));
+  });
+  fig.addEventListener('pointerleave', () => {
+    fig.style.setProperty('--px', '0');
+    fig.style.setProperty('--py', '0');
+  });
+}
+
 function initHero() {
   const years = Math.max(yearsSince(START_DATE), 7);
   const yearsBadge = document.getElementById('years-badge');
@@ -47,7 +157,7 @@ function initHero() {
       const node = document.querySelector(target);
       if (node) {
         e.preventDefault();
-        node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        node.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       }
     });
   });
@@ -68,9 +178,42 @@ function initHero() {
         );
     };
     portrait.addEventListener('error', applyMonogram, { once: true });
-    // La imagen puede haber fallado ya (deferred module): si terminó sin dimensiones, es error.
     if (portrait.complete && portrait.naturalWidth === 0) applyMonogram();
   }
+}
+
+/* ---- copiar email ---- */
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    /* fallback legacy */
+  }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
+function initCopyEmail() {
+  const btn = document.getElementById('copy-email');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    const email = btn.dataset.email;
+    const ok = await copyText(email);
+    showToast(ok ? '✦ Email copiado — ' + email : email);
+  });
 }
 
 async function initTimeline() {
@@ -79,13 +222,15 @@ async function initTimeline() {
   try {
     const entries = await fetchJson('/api/timeline', './data/timeline.json');
     list.innerHTML = entries
-      .map((entry) => {
+      .map((entry, i) => {
         const isCurrent = !entry.end_date;
         const dateRange = `${formatMonthYear(entry.start_date)} — ${
           entry.end_date ? formatMonthYear(entry.end_date) : 'Actualidad'
         }`;
         return `
-          <li class="timeline-entry${isCurrent ? ' timeline-entry--current' : ''}">
+          <li class="timeline-entry${isCurrent ? ' timeline-entry--current' : ''}" style="--reveal-delay: ${
+          i * 90
+        }ms">
             <div class="timeline-entry__header">
               <h3 class="timeline-entry__company">${entry.company}</h3>
               <span class="timeline-entry__role">${entry.role}</span>
@@ -101,6 +246,7 @@ async function initTimeline() {
         `;
       })
       .join('');
+    observeReveals(list.querySelectorAll('.timeline-entry'));
   } catch {
     list.innerHTML = '<li class="empty-state">No se pudo cargar la trayectoria.</li>';
   }
@@ -109,6 +255,21 @@ async function initTimeline() {
 let allProjects = [];
 let activeTag = null;
 let lastFocusedCard = null;
+
+function attachTilt(card) {
+  if (reduceMotion || !finePointer) return;
+  card.addEventListener('pointermove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    const y = ((e.clientY - r.top) / r.height) * 2 - 1;
+    card.style.setProperty('--tiltY', (x * 4).toFixed(2) + 'deg');
+    card.style.setProperty('--tiltX', (-y * 4).toFixed(2) + 'deg');
+  });
+  card.addEventListener('pointerleave', () => {
+    card.style.setProperty('--tiltX', '0deg');
+    card.style.setProperty('--tiltY', '0deg');
+  });
+}
 
 function renderGrid() {
   const grid = document.getElementById('projects-grid');
@@ -126,8 +287,9 @@ function renderGrid() {
 
   grid.innerHTML = visible
     .map(
-      (p) => `
-      <button class="project-card" data-slug="${p.slug}" aria-label="Ver detalle de ${p.title}">
+      (p, i) => `
+      <button class="project-card" data-slug="${p.slug}" style="--i: ${i}" aria-label="Ver detalle de ${p.title}">
+        <span class="project-card__plate">Nº ${String(i + 1).padStart(2, '0')}</span>
         <div class="project-card__layer project-card__layer--teal"></div>
         <div class="project-card__layer project-card__layer--orange"></div>
         <div class="vu-meter">
@@ -147,6 +309,7 @@ function renderGrid() {
   grid.querySelectorAll('.project-card').forEach((card) => {
     card.addEventListener('click', () => openDetail(card.dataset.slug, card));
     card.addEventListener('mouseenter', () => triggerPrint(card));
+    attachTilt(card);
     observer.observe(card);
   });
 }
@@ -211,6 +374,7 @@ async function openDetail(slug, originCard) {
   const demoEl = document.getElementById('detail-demo');
 
   modal.hidden = false;
+  document.body.style.overflow = 'hidden';
 
   try {
     let project;
@@ -249,6 +413,7 @@ async function openDetail(slug, originCard) {
 function closeDetail() {
   const modal = document.getElementById('project-detail');
   modal.hidden = true;
+  document.body.style.overflow = '';
   if (window.location.pathname.endsWith('/proyectos')) {
     window.history.pushState({}, '', './');
   }
@@ -263,7 +428,12 @@ function initDetailModal() {
   });
 }
 
+initTheme();
+initScroll();
 initHero();
+initPortrait();
+initCopyEmail();
+observeReveals(document.querySelectorAll('[data-reveal]'));
 initTimeline();
 initVitrina();
 initDetailModal();
