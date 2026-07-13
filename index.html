@@ -1,58 +1,85 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diego Gaxiola — Software Engineer, AI-native</title>
   <meta name="description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos en AgentChain." />
+  <meta name="theme-color" content="#f3ead8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
+  <script>
+    // Fija el tema antes del primer pintado para evitar parpadeo (FOUC).
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
 
-  <header class="masthead">
-    <span class="masthead__mark">DG—01</span>
-    <nav class="masthead__nav">
-      <a href="#vitrina">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+  <a class="skip-link" href="#hero">Saltar al contenido</a>
+
+  <header class="masthead" id="masthead">
+    <span class="masthead__mark"><span class="masthead__dot" aria-hidden="true"></span>DG—01</span>
+    <nav class="masthead__nav" aria-label="Navegación principal">
+      <a href="#trayectoria" data-nav>Trayectoria</a>
+      <a href="#vitrina" data-nav>Proyectos</a>
+      <a href="#contacto" data-nav>Contacto</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+        <span class="theme-toggle__track"><span class="theme-toggle__thumb"></span></span>
+        <span class="theme-toggle__label">DÍA</span>
+      </button>
     </nav>
   </header>
 
   <main>
     <section id="hero" class="hero" aria-label="Presentación">
       <div class="hero__text">
-        <p class="label">01 — SOBRE MÍ</p>
-        <h1 class="hero__name">Diego Gaxiola</h1>
-        <p class="hero__role">Software Engineer <span class="hero__role-accent">· AI-native</span></p>
-        <p class="hero__meta">
+        <p class="label" data-reveal>01 — SOBRE MÍ</p>
+        <h1 class="hero__name" data-reveal style="--reveal-delay: 60ms">Diego Gaxiola</h1>
+        <p class="hero__role" data-reveal style="--reveal-delay: 140ms">Software Engineer <span class="hero__role-accent">· AI-native</span></p>
+        <p class="hero__meta" data-reveal style="--reveal-delay: 220ms">
           <span id="years-badge" class="hero__years">7+ años</span> de experiencia full-stack
           <span id="availability-badge" class="badge badge--available">Disponible para proyectos</span>
         </p>
-        <div class="hero__ctas">
+        <div class="hero__ctas" data-reveal style="--reveal-delay: 300ms">
           <a href="#vitrina" class="btn btn--primary" data-scroll-target="#vitrina">Ver proyectos</a>
           <a href="#contacto" class="btn btn--ghost" data-scroll-target="#contacto">Contactar</a>
         </div>
       </div>
-      <figure class="hero__portrait">
+      <figure class="hero__portrait" id="hero-portrait" data-reveal style="--reveal-delay: 180ms">
         <img class="hero__portrait-img" src="https://files.catbox.moe/eurtky.jpg" alt="Retrato de Diego Gaxiola" width="400" height="400" />
         <span class="hero__portrait-frame" aria-hidden="true"></span>
+        <span class="hero__portrait-tag" aria-hidden="true">LÁMINA 00 · AUTOR</span>
       </figure>
+      <a class="hero__scroll-cue" href="#trayectoria" data-scroll-target="#trayectoria" aria-label="Bajar a trayectoria">
+        <span class="hero__scroll-cue-line"></span>
+        <span class="hero__scroll-cue-text">SCROLL</span>
+      </a>
     </section>
 
     <section id="trayectoria" class="timeline-section" aria-label="Trayectoria profesional">
-      <p class="label">02 — TRAYECTORIA</p>
-      <h2 class="section-title">Dónde he construido</h2>
+      <p class="label" data-reveal>02 — TRAYECTORIA</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Dónde he construido</h2>
       <ol id="timeline-list" class="timeline-list" aria-live="polite"></ol>
     </section>
 
     <section id="skills" class="skills-section" aria-label="Stack y habilidades">
-      <p class="label">03 — STACK</p>
-      <h2 class="section-title">Con qué trabajo</h2>
+      <p class="label" data-reveal>03 — STACK</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Con qué trabajo</h2>
       <div class="skills-grid">
-        <div class="skills-group">
+        <div class="skills-group" data-reveal>
           <h3>Lenguajes</h3>
           <div class="chip-row">
             <span class="tech-chip">TypeScript</span>
@@ -61,7 +88,7 @@
             <span class="tech-chip">SQL</span>
           </div>
         </div>
-        <div class="skills-group">
+        <div class="skills-group" data-reveal style="--reveal-delay: 80ms">
           <h3>Frameworks</h3>
           <div class="chip-row">
             <span class="tech-chip">Hono</span>
@@ -70,7 +97,7 @@
             <span class="tech-chip">Vite</span>
           </div>
         </div>
-        <div class="skills-group">
+        <div class="skills-group" data-reveal style="--reveal-delay: 160ms">
           <h3>Cloud / Infra</h3>
           <div class="chip-row">
             <span class="tech-chip">AWS</span>
@@ -79,7 +106,7 @@
             <span class="tech-chip">Kafka</span>
           </div>
         </div>
-        <div class="skills-group">
+        <div class="skills-group" data-reveal style="--reveal-delay: 240ms">
           <h3>IA</h3>
           <div class="chip-row">
             <span class="tech-chip">Claude API</span>
@@ -91,8 +118,8 @@
     </section>
 
     <section id="vitrina" class="vitrina-section" aria-label="Vitrina de proyectos">
-      <p class="label">04 — VITRINA</p>
-      <h2 class="section-title">Lo que se ha impreso</h2>
+      <p class="label" data-reveal>04 — VITRINA</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Lo que se ha impreso</h2>
       <div id="tag-filter" class="chip-row chip-row--filter" role="group" aria-label="Filtrar por tag"></div>
       <div id="projects-grid" class="projects-grid" aria-live="polite">
         <div class="skeleton-card skeleton"></div>
@@ -120,15 +147,20 @@
   </div>
 
   <footer id="contacto" class="footer-stamp" aria-label="Contacto">
-    <p class="label">05 — CONTACTO</p>
-    <h2 class="section-title">Hablemos</h2>
-    <div class="footer-stamp__links">
-      <a href="mailto:diego_yesi8@hotmail.com" class="stamp-link">Email</a>
+    <p class="label" data-reveal>05 — CONTACTO</p>
+    <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Hablemos</h2>
+    <div class="footer-stamp__links" data-reveal style="--reveal-delay: 120ms">
+      <button id="copy-email" class="stamp-link stamp-link--email" type="button" data-email="diego_yesi8@hotmail.com">
+        <span class="stamp-link__label">Email</span>
+        <span class="stamp-link__hint">Copiar</span>
+      </button>
       <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link">LinkedIn</a>
       <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link">GitHub</a>
     </div>
     <p class="footer-stamp__meta">© <span id="footer-year"></span> Diego Gaxiola — esta vitrina se actualiza automáticamente vía AgentChain, sin redeploy manual.</p>
   </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
   <script type="module" src="./app.js"></script>
 </body>
