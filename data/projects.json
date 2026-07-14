@@ -11,7 +11,7 @@
       "es": "Proyecto personal público que empaqueta AgentChain como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.",
       "en": "A public personal project that packages AgentChain as a CLI-driven orchestration agent. It coordinates daily engineering workflows —plan, execute and verify— over a Shell runtime, aimed at an autonomous SDLC loop. It is the foundation this very portfolio showcase is built on."
     },
-    "cover_image_url": null,
+    "cover_image_url": "https://raw.githubusercontent.com/DiegoGaxi/agentchain-releases/main/assets/agentchain-space.png",
     "repo_url": "https://github.com/DiegoGaxi/agentchain-releases",
     "demo_url": null,
     "tags": ["AI Agents", "Automation", "Shell", "Workflows"],
