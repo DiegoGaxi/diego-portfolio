@@ -1,1 +1,92 @@
-[{"id":"593f762a-48f1-48a7-a58a-738336fa9476","slug":"agentchain-releases","title":"AgentChain — Agente personal de orquestación","summary":"Agente personal que orquesta tareas y workflows de desarrollo (SDLC autónomo) desde la terminal: encadena pasos, ejecuta y verifica sin intervención manual.","description_long":"Proyecto personal público que empaqueta AgentChain como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.","cover_image_url":null,"repo_url":"https://github.com/DiegoGaxi/agentchain-releases","demo_url":null,"tags":["AI Agents","Automation","Shell","Workflows"],"published_at":"2026-07-09T23:11:05-07:00"},{"id":"090b7d08-3382-47e2-9b6b-590e9464c521","slug":"property-registry","title":"Registro de Propiedades on-chain","summary":"Registro de propiedades sobre Ethereum: Ruby on Rails + smart contract en Solidity, con roles Comprador, Vendedor, Notario y Sello de Gobierno.","description_long":"Aplicación full-stack Web3 que lleva un registro de propiedades a la blockchain de Ethereum. Un backend en Ruby on Rails se integra con un contrato inteligente en Solidity para modelar el flujo de compraventa con cuatro roles —comprador, vendedor, notario y sello de gobierno— garantizando trazabilidad e inmutabilidad de las transferencias.","cover_image_url":null,"repo_url":"https://github.com/DiegoGaxi/property_registry","demo_url":null,"tags":["Ruby on Rails","Solidity","Ethereum","Web3"],"published_at":"2026-01-13T08:09:48-07:00"},{"id":"fdb467de-7072-4321-b277-82cc411904f7","slug":"multimodal","title":"Multimodal — Entrenador de modelos de IA","summary":"Entrenador de modelos de IA para imágenes, texto o combinaciones multimodales, en Python.","description_long":"Herramienta en Python para entrenar modelos de aprendizaje automático sobre distintas modalidades: imágenes, texto o combinaciones multimodales. Explora el pipeline de preparación de datos y entrenamiento para tareas de visión y lenguaje.","cover_image_url":null,"repo_url":"https://github.com/DiegoGaxi/multimodal","demo_url":null,"tags":["Python","AI/ML","Multimodal"],"published_at":"2025-09-12T14:53:39-07:00"},{"id":"3bff5d9f-fa03-4198-99aa-40b530daf776","slug":"ecommerce-lit","title":"Ecommerce con Lit","summary":"Aplicación de ecommerce construida con Lit (Web Components) y TypeScript.","description_long":"Tienda online implementada con Lit y Web Components en TypeScript. Demuestra una arquitectura de front-end ligera basada en componentes web nativos, sin framework pesado, con catálogo y flujo de compra.","cover_image_url":null,"repo_url":"https://github.com/DiegoGaxi/ecommerce_lit","demo_url":null,"tags":["TypeScript","Lit","Web Components","Ecommerce"],"published_at":"2025-08-15T11:56:47-07:00"},{"id":"458a9f80-7930-4440-85c5-0560479877a1","slug":"blogging-in","title":"Blogging (Ruby)","summary":"Plataforma de blogs construida con Ruby 3.2.2.","description_long":"Aplicación de blogging escrita en Ruby 3.2.2. Cubre el CRUD de publicaciones y sienta las bases de una plataforma de contenidos sencilla y mantenible.","cover_image_url":null,"repo_url":"https://github.com/DiegoGaxi/blogging_in","demo_url":null,"tags":["Ruby","Blog"],"published_at":"2024-08-16T13:07:26-07:00"}]
+[
+  {
+    "id": "593f762a-48f1-48a7-a58a-738336fa9476",
+    "slug": "agentchain-releases",
+    "title": { "es": "AgentChain — Agente personal de orquestación", "en": "AgentChain — Personal orchestration agent" },
+    "summary": {
+      "es": "Agente personal que orquesta tareas y workflows de desarrollo (SDLC autónomo) desde la terminal: encadena pasos, ejecuta y verifica sin intervención manual.",
+      "en": "A personal agent that orchestrates development tasks and workflows (autonomous SDLC) from the terminal: chains steps, executes and verifies with no manual intervention."
+    },
+    "description_long": {
+      "es": "Proyecto personal público que empaqueta AgentChain como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.",
+      "en": "A public personal project that packages AgentChain as a CLI-driven orchestration agent. It coordinates daily engineering workflows —plan, execute and verify— over a Shell runtime, aimed at an autonomous SDLC loop. It is the foundation this very portfolio showcase is built on."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/agentchain-releases",
+    "demo_url": null,
+    "tags": ["AI Agents", "Automation", "Shell", "Workflows"],
+    "published_at": "2026-07-09T23:11:05-07:00"
+  },
+  {
+    "id": "090b7d08-3382-47e2-9b6b-590e9464c521",
+    "slug": "property-registry",
+    "title": { "es": "Registro de Propiedades on-chain", "en": "On-chain Property Registry" },
+    "summary": {
+      "es": "Registro de propiedades sobre Ethereum: Ruby on Rails + smart contract en Solidity, con roles Comprador, Vendedor, Notario y Sello de Gobierno.",
+      "en": "Property registry on Ethereum: Ruby on Rails + Solidity smart contract, with Buyer, Seller, Notary and Government Seal roles."
+    },
+    "description_long": {
+      "es": "Aplicación full-stack Web3 que lleva un registro de propiedades a la blockchain de Ethereum. Un backend en Ruby on Rails se integra con un contrato inteligente en Solidity para modelar el flujo de compraventa con cuatro roles —comprador, vendedor, notario y sello de gobierno— garantizando trazabilidad e inmutabilidad de las transferencias.",
+      "en": "A full-stack Web3 app that records properties on the Ethereum blockchain. A Ruby on Rails back end integrates with a Solidity smart contract to model the sale flow across four roles —buyer, seller, notary and government seal— guaranteeing traceability and immutability of transfers."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/property_registry",
+    "demo_url": null,
+    "tags": ["Ruby on Rails", "Solidity", "Ethereum", "Web3"],
+    "published_at": "2026-01-13T08:09:48-07:00"
+  },
+  {
+    "id": "fdb467de-7072-4321-b277-82cc411904f7",
+    "slug": "multimodal",
+    "title": { "es": "Multimodal — Entrenador de modelos de IA", "en": "Multimodal — AI model trainer" },
+    "summary": {
+      "es": "Entrenador de modelos de IA para imágenes, texto o combinaciones multimodales, en Python.",
+      "en": "An AI model trainer for images, text or multimodal combinations, in Python."
+    },
+    "description_long": {
+      "es": "Herramienta en Python para entrenar modelos de aprendizaje automático sobre distintas modalidades: imágenes, texto o combinaciones multimodales. Explora el pipeline de preparación de datos y entrenamiento para tareas de visión y lenguaje.",
+      "en": "A Python tool to train machine learning models across modalities: images, text or multimodal combinations. It explores the data-preparation and training pipeline for vision and language tasks."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/multimodal",
+    "demo_url": null,
+    "tags": ["Python", "AI/ML", "Multimodal"],
+    "published_at": "2025-09-12T14:53:39-07:00"
+  },
+  {
+    "id": "3bff5d9f-fa03-4198-99aa-40b530daf776",
+    "slug": "ecommerce-lit",
+    "title": { "es": "Ecommerce con Lit", "en": "Ecommerce with Lit" },
+    "summary": {
+      "es": "Aplicación de ecommerce construida con Lit (Web Components) y TypeScript.",
+      "en": "An ecommerce app built with Lit (Web Components) and TypeScript."
+    },
+    "description_long": {
+      "es": "Tienda online implementada con Lit y Web Components en TypeScript. Demuestra una arquitectura de front-end ligera basada en componentes web nativos, sin framework pesado, con catálogo y flujo de compra.",
+      "en": "An online store built with Lit and TypeScript Web Components. It demonstrates a lightweight front-end architecture based on native web components, no heavy framework, with catalog and checkout flow."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/ecommerce_lit",
+    "demo_url": null,
+    "tags": ["TypeScript", "Lit", "Web Components", "Ecommerce"],
+    "published_at": "2025-08-15T11:56:47-07:00"
+  },
+  {
+    "id": "458a9f80-7930-4440-85c5-0560479877a1",
+    "slug": "blogging-in",
+    "title": { "es": "Blogging (Ruby)", "en": "Blogging (Ruby)" },
+    "summary": {
+      "es": "Plataforma de blogs construida con Ruby 3.2.2.",
+      "en": "A blogging platform built with Ruby 3.2.2."
+    },
+    "description_long": {
+      "es": "Aplicación de blogging escrita en Ruby 3.2.2. Cubre el CRUD de publicaciones y sienta las bases de una plataforma de contenidos sencilla y mantenible.",
+      "en": "A blogging app written in Ruby 3.2.2. It covers post CRUD and lays the foundations of a simple, maintainable content platform."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/blogging_in",
+    "demo_url": null,
+    "tags": ["Ruby", "Blog"],
+    "published_at": "2024-08-16T13:07:26-07:00"
+  }
+]
