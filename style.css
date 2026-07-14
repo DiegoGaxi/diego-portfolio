@@ -327,6 +327,44 @@ a {
   text-align: left;
 }
 
+/* language switch (ES / EN) */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+.lang-switch__btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  color: var(--ink-soft);
+  font: inherit;
+  transition: color 0.2s var(--ease);
+}
+.lang-switch__btn:hover,
+.lang-switch__btn:focus-visible {
+  color: var(--ink);
+}
+.lang-switch__btn.is-active {
+  color: var(--ink);
+  font-weight: 600;
+}
+.lang-switch__btn.is-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 2px;
+  background: var(--ink-orange);
+}
+.lang-switch__sep {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
 /* ---- hero ---- */
 .hero {
   position: relative;
