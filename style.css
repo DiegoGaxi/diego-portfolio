@@ -851,7 +851,7 @@ a {
   background-size: 10px 10px;
   border: 1px solid var(--line);
   margin-bottom: var(--space-2);
-  object-fit: cover;
+  object-fit: contain;
 }
 .project-card__title {
   font-family: var(--font-display);
