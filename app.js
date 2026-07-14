@@ -18,9 +18,53 @@ async function fetchJson(apiPath, staticPath) {
   return await res.json();
 }
 
-function formatMonthYear(dateStr) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString('es-MX', { month: 'short', year: 'numeric' });
+function formatMonthYear(dateStr, lang) {
+  const [y, m, day] = dateStr.slice(0, 10).split('-').map(Number);
+  const d = new Date(y, m - 1, day);
+  const locale = lang === 'en' ? 'en-US' : 'es-MX';
+  return d.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+}
+
+/* ---- i18n: strings de UI + selector de idioma ---- */
+let I18N = {};
+let lang = 'es';
+
+function initI18n() {
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'es' || saved === 'en') lang = saved;
+  } catch {}
+  if (!I18N[lang]) lang = 'es';
+
+  const apply = () => {
+    const dict = I18N[lang] || {};
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+    document.querySelectorAll('.lang-switch__btn').forEach((b) => {
+      const active = b.dataset.lang === lang;
+      b.setAttribute('aria-pressed', String(active));
+      b.classList.toggle('is-active', active);
+    });
+  };
+
+  document.querySelectorAll('.lang-switch__btn').forEach((b) => {
+    b.addEventListener('click', () => {
+      lang = b.dataset.lang;
+      try { localStorage.setItem('lang', lang); } catch {}
+      apply();
+      renderTimeline();
+      renderGrid();
+    });
+  });
+
+  apply();
+}
+
+function t(key) {
+  return (I18N[lang] && I18N[lang][key]) || key;
 }
 
 function yearsSince(start) {
@@ -51,15 +95,15 @@ function observeReveals(nodes) {
 /* ---- toast ---- */
 let toastTimer;
 function showToast(msg) {
-  const t = document.getElementById('toast');
-  if (!t) return;
-  t.hidden = false;
-  t.textContent = msg;
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.hidden = false;
+  toast.textContent = msg;
   // forzar reflow para que la transición de opacidad se dispare al añadir .show
-  void t.offsetWidth;
-  t.classList.add('show');
+  void toast.offsetWidth;
+  toast.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => t.classList.remove('show'), 2400);
+  toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2400);
 }
 
 /* ---- tema claro / oscuro ---- */
@@ -69,7 +113,7 @@ function initTheme() {
   const sync = () => {
     const dark = document.documentElement.getAttribute('data-theme') === 'dark';
     if (toggle) toggle.setAttribute('aria-pressed', String(dark));
-    if (label) label.textContent = dark ? 'NOCHE' : 'DÍA';
+    if (label) label.textContent = dark ? t('theme.night') : t('theme.day');
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', dark ? '#16140f' : '#f3ead8');
   };
@@ -142,11 +186,11 @@ function initPortrait() {
 function initHero() {
   const years = Math.max(yearsSince(START_DATE), 7);
   const yearsBadge = document.getElementById('years-badge');
-  if (yearsBadge) yearsBadge.textContent = `${years}+ años`;
+  if (yearsBadge) yearsBadge.textContent = `${years}+ ${t('hero.yearsUnit')}`;
 
   const availabilityBadge = document.getElementById('availability-badge');
   if (availabilityBadge) {
-    availabilityBadge.textContent = AVAILABLE ? 'Disponible para proyectos' : 'No disponible';
+    availabilityBadge.textContent = AVAILABLE ? t('hero.available') : t('hero.unavailable');
     availabilityBadge.classList.add(AVAILABLE ? 'badge--available' : 'badge--unavailable');
   }
 
@@ -212,20 +256,29 @@ function initCopyEmail() {
   btn.addEventListener('click', async () => {
     const email = btn.dataset.email;
     const ok = await copyText(email);
-    showToast(ok ? '✦ Email copiado — ' + email : email);
+    showToast(ok ? t('detail.emailCopied') + email : email);
   });
 }
 
 async function initTimeline() {
   const list = document.getElementById('timeline-list');
   if (!list) return;
+  window.__timelineEntries = await fetchJson('/api/timeline', './data/timeline.json');
+  renderTimeline();
+}
+
+function renderTimeline() {
+  const list = document.getElementById('timeline-list');
+  if (!list || !window.__timelineEntries) return;
+  const entries = window.__timelineEntries;
   try {
-    const entries = await fetchJson('/api/timeline', './data/timeline.json');
     list.innerHTML = entries
       .map((entry, i) => {
         const isCurrent = !entry.end_date;
-        const dateRange = `${formatMonthYear(entry.start_date)} — ${
-          entry.end_date ? formatMonthYear(entry.end_date) : 'Actualidad'
+        const role = entry.role?.[lang] ?? entry.role;
+        const achievements = entry.achievements?.[lang] ?? entry.achievements ?? [];
+        const dateRange = `${formatMonthYear(entry.start_date, lang)} — ${
+          entry.end_date ? formatMonthYear(entry.end_date, lang) : t('timeline.current')
         }`;
         return `
           <li class="timeline-entry${isCurrent ? ' timeline-entry--current' : ''}" style="--reveal-delay: ${
@@ -233,14 +286,14 @@ async function initTimeline() {
         }ms">
             <div class="timeline-entry__header">
               <h3 class="timeline-entry__company">${entry.company}</h3>
-              <span class="timeline-entry__role">${entry.role}</span>
+              <span class="timeline-entry__role">${role}</span>
               <span class="timeline-entry__dates">${dateRange}</span>
             </div>
             <ul class="timeline-entry__achievements">
-              ${entry.achievements.map((a) => `<li class="achievement-bullet">${a}</li>`).join('')}
+              ${achievements.map((a) => `<li class="achievement-bullet">${a}</li>`).join('')}
             </ul>
             <div class="chip-row">
-              ${entry.tech_stack.map((t) => `<span class="tech-chip">${t}</span>`).join('')}
+              ${entry.tech_stack.map((tech) => `<span class="tech-chip">${tech}</span>`).join('')}
             </div>
           </li>
         `;
@@ -248,7 +301,7 @@ async function initTimeline() {
       .join('');
     observeReveals(list.querySelectorAll('.timeline-entry'));
   } catch {
-    list.innerHTML = '<li class="empty-state">No se pudo cargar la trayectoria.</li>';
+    list.innerHTML = `<li class="empty-state">${t('timeline.error')}</li>`;
   }
 }
 
@@ -288,7 +341,7 @@ function renderGrid() {
   grid.innerHTML = visible
     .map(
       (p, i) => `
-      <button class="project-card" data-slug="${p.slug}" style="--i: ${i}" aria-label="Ver detalle de ${p.title}">
+      <button class="project-card" data-slug="${p.slug}" style="--i: ${i}" aria-label="Ver detalle de ${p.title[lang] ?? p.title}">
         <span class="project-card__plate">Nº ${String(i + 1).padStart(2, '0')}</span>
         <div class="project-card__layer project-card__layer--teal"></div>
         <div class="project-card__layer project-card__layer--orange"></div>
@@ -296,8 +349,8 @@ function renderGrid() {
           ${Array.from({ length: 5 }, () => '<span class="vu-meter__bar"></span>').join('')}
         </div>
         ${p.cover_image_url ? `<img class="project-card__cover" src="${p.cover_image_url}" alt="" loading="lazy" />` : '<div class="project-card__cover"></div>'}
-        <h3 class="project-card__title">${p.title}</h3>
-        <p class="project-card__summary">${p.summary}</p>
+        <h3 class="project-card__title">${p.title[lang] ?? p.title}</h3>
+        <p class="project-card__summary">${p.summary[lang] ?? p.summary}</p>
         <div class="chip-row">
           ${p.tags.map((t) => `<span class="tech-chip">${t}</span>`).join('')}
         </div>
@@ -389,18 +442,18 @@ async function openDetail(slug, originCard) {
       project = found;
     }
 
-    titleEl.textContent = project.title;
-    summaryEl.textContent = project.summary;
-    descEl.textContent = project.description_long ?? '';
+    titleEl.textContent = project.title?.[lang] ?? project.title;
+    summaryEl.textContent = project.summary?.[lang] ?? project.summary;
+    descEl.textContent = (project.description_long?.[lang] ?? project.description_long) ?? '';
     tagsEl.innerHTML = project.tags.map((t) => `<span class="tech-chip">${t}</span>`).join('');
     repoEl.href = project.repo_url ?? '#';
     repoEl.style.display = project.repo_url ? 'inline-block' : 'none';
     demoEl.href = project.demo_url ?? '#';
     demoEl.style.display = project.demo_url ? 'inline-block' : 'none';
   } catch {
-    titleEl.textContent = 'Proyecto no encontrado';
+    titleEl.textContent = t('detail.notFound');
     summaryEl.textContent = '';
-    descEl.innerHTML = '<span class="project-detail__error">Este proyecto no existe o ya no está publicado.</span>';
+    descEl.innerHTML = `<span class="project-detail__error">${t('detail.notFoundDesc')}</span>`;
     tagsEl.innerHTML = '';
     repoEl.style.display = 'none';
     demoEl.style.display = 'none';
@@ -428,12 +481,23 @@ function initDetailModal() {
   });
 }
 
-initTheme();
-initScroll();
-initHero();
-initPortrait();
-initCopyEmail();
-observeReveals(document.querySelectorAll('[data-reveal]'));
-initTimeline();
-initVitrina();
-initDetailModal();
+async function boot() {
+  // Carga el diccionario de idiomas primero; initI18n aplica ES por defecto.
+  try {
+    I18N = await fetchJson('/api/i18n', './data/i18n.json');
+  } catch {
+    I18N = {};
+  }
+  initI18n();
+  initTheme();
+  initScroll();
+  initHero();
+  initPortrait();
+  initCopyEmail();
+  observeReveals(document.querySelectorAll('[data-reveal]'));
+  initTimeline();
+  initVitrina();
+  initDetailModal();
+}
+
+boot();
