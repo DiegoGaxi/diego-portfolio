@@ -1,0 +1,116 @@
+[
+  {
+    "company": "Agentcy",
+    "role": { "es": "Founding Engineer / AI Systems Lead", "en": "Founding Engineer / AI Systems Lead" },
+    "start_date": "2026-01-01",
+    "end_date": null,
+    "achievements": {
+      "es": [
+        "Diseñé y construí AgentChain, una plataforma de orquestación multi-agente para SDLC autónomo.",
+        "Lideré la arquitectura de workflows concurrentes con verificación adversarial entre agentes."
+      ],
+      "en": [
+        "Designed and built AgentChain, a multi-agent orchestration platform for autonomous SDLC.",
+        "Led the architecture of concurrent workflows with adversarial verification between agents."
+      ]
+    },
+    "tech_stack": ["Bun", "TypeScript", "PostgreSQL", "Claude API"]
+  },
+  {
+    "company": "EPAM / BBVA",
+    "role": { "es": "PMO & Front-End Leader", "en": "PMO & Front-End Leader" },
+    "start_date": "2025-05-01",
+    "end_date": "2026-01-31",
+    "achievements": {
+      "es": [
+        "Automatización de Funds Transfer Pricing (FTP): procesos de cálculo vía gestión SDLC, mejorando gobernanza y eficiencia operativa.",
+        "Desarrollo de vistas y funcionalidades en front-end (Angular 17, TypeScript) y despliegue a producción.",
+        "Análisis de requisitos y resolución técnica; delegación de tareas al equipo para alcanzar los objetivos."
+      ],
+      "en": [
+        "Automation of Funds Transfer Pricing (FTP): calculation processes via SDLC management, improving governance and operational efficiency.",
+        "Built front-end views and features (Angular 17, TypeScript) and shipped them to production.",
+        "Requirements analysis and technical resolution; delegated planned tasks to the team to meet objectives."
+      ]
+    },
+    "tech_stack": ["Angular", "TypeScript", "SDLC", "Java", "Spring"]
+  },
+  {
+    "company": "Neoris",
+    "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+    "start_date": "2024-09-01",
+    "end_date": "2025-05-31",
+    "achievements": {
+      "es": [
+        "Sistema administrativo legal: análisis de requisitos y resolución técnica del problema.",
+        "Desarrollo de vistas y funcionalidades en front-end (Angular 17, TypeScript).",
+        "Lógica de negocio (REST API - Microservicios) en back-end (Java Spring Boot) y administración de PostgreSQL."
+      ],
+      "en": [
+        "Administrative legal system: requirements analysis and technical problem resolution.",
+        "Built front-end views and features (Angular 17, TypeScript).",
+        "Business logic (REST API - Microservices) on the back end (Java Spring Boot) and PostgreSQL administration."
+      ]
+    },
+    "tech_stack": ["Angular", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "Microservices"]
+  },
+  {
+    "company": "Corporativo Caprepa",
+    "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+    "start_date": "2024-07-01",
+    "end_date": "2024-09-30",
+    "achievements": {
+      "es": [
+        "Sistema de administración de negocio y gestión financiera: planeación de soluciones a medida.",
+        "Desarrollo de APIs para distintos proyectos y necesidades; esquemas y migraciones de base de datos (MySQL).",
+        "Refactorización de código para mejorar el mantenimiento; lógica de negocio (PHP Laravel) y front-end (Angular)."
+      ],
+      "en": [
+        "Business administration and financial management system: tailored solution planning.",
+        "Built APIs for different projects and needs; database schemas and migrations (MySQL).",
+        "Code refactoring to improve maintainability; business logic (PHP Laravel) and front-end (Angular)."
+      ]
+    },
+    "tech_stack": ["PHP", "Laravel", "Angular", "MySQL", "REST API"]
+  },
+  {
+    "company": "Fuentebuena",
+    "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+    "start_date": "2022-05-01",
+    "end_date": "2024-05-31",
+    "achievements": {
+      "es": [
+        "Arrendamiento de vehículos: desarrollo y mantenimiento de sistemas ERP y CRM.",
+        "Generación de reportes con Cloud Functions y Lambda, enviando datos a una API.",
+        "Código front-end (JS) y back-end (Ruby on Rails, PHP Laravel): vistas, modelos, controladores, servicios y pruebas.",
+        "Esquemas y migraciones de base de datos (Postgres, MySQL, MongoDB); guía a los miembros del equipo."
+      ],
+      "en": [
+        "Vehicle leasing: development and maintenance of ERP and CRM systems.",
+        "Report generation with Cloud Functions and Lambda, sending data to an API.",
+        "Front-end (JS) and back-end (Ruby on Rails, PHP Laravel) code: views, models, controllers, services and tests.",
+        "Database schemas and migrations (Postgres, MySQL, MongoDB); mentored team members."
+      ]
+    },
+    "tech_stack": ["Ruby on Rails", "PHP", "Laravel", "JavaScript", "PostgreSQL", "MySQL", "MongoDB", "AWS Lambda"]
+  },
+  {
+    "company": "Santa Maria de la Luz Jardin Funerario S.A de C.V",
+    "role": { "es": "Full Stack Developer", "en": "Full Stack Developer" },
+    "start_date": "2019-06-01",
+    "end_date": "2022-05-31",
+    "achievements": {
+      "es": [
+        "Sistema de información web para administración contable, empleados y gestión de clientes (estados de cuenta, proveedores, préstamos, nómina, cuentas por cobrar, amortizaciones, inventarios, mapa de facturación con geolocalización).",
+        "Levantamiento de requisitos, análisis y planeación de la solución; front-end (React, Angular JS) y back-end (Ruby on Rails, REST API).",
+        "Automatización del proceso contable: tablas para reportes de proveedores, cuentas por cobrar, inventarios, amortizaciones y balance general."
+      ],
+      "en": [
+        "Web information system for accounting administration, employees and customer management (statements, suppliers, loans, payroll, receivables, amortizations, inventories, billing map with geolocation).",
+        "Requirements gathering, analysis and solution planning; front-end (React, Angular JS) and back-end (Ruby on Rails, REST API).",
+        "Automated the company's accounting process: tables for supplier, receivable, inventory, amortization and balance-sheet reports."
+      ]
+    },
+    "tech_stack": ["Ruby on Rails", "React", "Angular JS", "MySQL", "REST API"]
+  }
+]
