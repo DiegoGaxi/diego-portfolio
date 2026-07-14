@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Secrets / environment
+.env
+
+# AgentChain workflow data (runtime artifacts)
+agentchain-workflows/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
