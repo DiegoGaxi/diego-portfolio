@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=2" />
+  <link rel="stylesheet" href="./style.css?v=3" />
   <script>
     // Fija el tema antes del primer pintado para evitar parpadeo (FOUC).
     (function () {
@@ -33,9 +33,14 @@
   <header class="masthead" id="masthead">
     <span class="masthead__mark"><span class="masthead__dot" aria-hidden="true"></span>DG—01</span>
     <nav class="masthead__nav" aria-label="Navegación principal">
-      <a href="#trayectoria" data-nav>Trayectoria</a>
-      <a href="#vitrina" data-nav>Proyectos</a>
-      <a href="#contacto" data-nav>Contacto</a>
+      <a href="#trayectoria" data-nav data-i18n="nav.trayectoria">Trayectoria</a>
+      <a href="#vitrina" data-nav data-i18n="nav.proyectos">Proyectos</a>
+      <a href="#contacto" data-nav data-i18n="nav.contacto">Contacto</a>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+        <button type="button" class="lang-switch__btn" data-lang="es" aria-pressed="true">ES</button>
+        <span class="lang-switch__sep" aria-hidden="true">/</span>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
         <span class="theme-toggle__track"><span class="theme-toggle__thumb"></span></span>
         <span class="theme-toggle__label">DÍA</span>
@@ -46,16 +51,16 @@
   <main>
     <section id="hero" class="hero" aria-label="Presentación">
       <div class="hero__text">
-        <p class="label" data-reveal>01 — SOBRE MÍ</p>
+        <p class="label" data-reveal data-i18n="hero.eyebrow">01 — SOBRE MÍ</p>
         <h1 class="hero__name" data-reveal style="--reveal-delay: 60ms">Diego Gaxiola</h1>
-        <p class="hero__role" data-reveal style="--reveal-delay: 140ms">Software Engineer <span class="hero__role-accent">· AI-native</span></p>
+        <p class="hero__role" data-reveal style="--reveal-delay: 140ms"><span data-i18n="hero.role">Software Engineer</span> <span class="hero__role-accent" data-i18n="hero.roleAccent">· AI-native</span></p>
         <p class="hero__meta" data-reveal style="--reveal-delay: 220ms">
-          <span id="years-badge" class="hero__years">7+ años</span> de experiencia full-stack
-          <span id="availability-badge" class="badge badge--available">Disponible para proyectos</span>
+          <span id="years-badge" class="hero__years">7+ años</span> <span data-i18n="hero.years">de experiencia full-stack</span>
+          <span id="availability-badge" class="badge badge--available" data-i18n="hero.available">Disponible para proyectos</span>
         </p>
         <div class="hero__ctas" data-reveal style="--reveal-delay: 300ms">
-          <a href="#vitrina" class="btn btn--primary" data-scroll-target="#vitrina">Ver proyectos</a>
-          <a href="#contacto" class="btn btn--ghost" data-scroll-target="#contacto">Contactar</a>
+          <a href="#vitrina" class="btn btn--primary" data-scroll-target="#vitrina" data-i18n="hero.ctaProjects">Ver proyectos</a>
+          <a href="#contacto" class="btn btn--ghost" data-scroll-target="#contacto" data-i18n="hero.ctaContact">Contactar</a>
         </div>
       </div>
       <figure class="hero__portrait" id="hero-portrait" data-reveal style="--reveal-delay: 180ms">
@@ -65,22 +70,22 @@
       </figure>
       <a class="hero__scroll-cue" href="#trayectoria" data-scroll-target="#trayectoria" aria-label="Bajar a trayectoria">
         <span class="hero__scroll-cue-line"></span>
-        <span class="hero__scroll-cue-text">SCROLL</span>
+        <span class="hero__scroll-cue-text" data-i18n="hero.scroll">SCROLL</span>
       </a>
     </section>
 
     <section id="trayectoria" class="timeline-section" aria-label="Trayectoria profesional">
-      <p class="label" data-reveal>02 — TRAYECTORIA</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Dónde he construido</h2>
+      <p class="label" data-reveal data-i18n="timeline.eyebrow">02 — TRAYECTORIA</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="timeline.title">Dónde he construido</h2>
       <ol id="timeline-list" class="timeline-list" aria-live="polite"></ol>
     </section>
 
     <section id="skills" class="skills-section" aria-label="Stack y habilidades">
-      <p class="label" data-reveal>03 — STACK</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Con qué trabajo</h2>
+      <p class="label" data-reveal data-i18n="skills.eyebrow">03 — STACK</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="skills.title">Con qué trabajo</h2>
       <div class="skills-grid">
         <div class="skills-group" data-reveal>
-          <h3>Lenguajes</h3>
+          <h3 data-i18n="skills.languages">Lenguajes</h3>
           <div class="chip-row">
             <span class="tech-chip">TypeScript</span>
             <span class="tech-chip">JavaScript</span>
@@ -89,7 +94,7 @@
           </div>
         </div>
         <div class="skills-group" data-reveal style="--reveal-delay: 80ms">
-          <h3>Frameworks</h3>
+          <h3 data-i18n="skills.frameworks">Frameworks</h3>
           <div class="chip-row">
             <span class="tech-chip">Hono</span>
             <span class="tech-chip">React</span>
@@ -98,7 +103,7 @@
           </div>
         </div>
         <div class="skills-group" data-reveal style="--reveal-delay: 160ms">
-          <h3>Cloud / Infra</h3>
+          <h3 data-i18n="skills.cloud">Cloud / Infra</h3>
           <div class="chip-row">
             <span class="tech-chip">AWS</span>
             <span class="tech-chip">Docker</span>
@@ -107,7 +112,7 @@
           </div>
         </div>
         <div class="skills-group" data-reveal style="--reveal-delay: 240ms">
-          <h3>IA</h3>
+          <h3 data-i18n="skills.ai">IA</h3>
           <div class="chip-row">
             <span class="tech-chip">Claude API</span>
             <span class="tech-chip">Agentic Workflows</span>
@@ -118,15 +123,15 @@
     </section>
 
     <section id="vitrina" class="vitrina-section" aria-label="Vitrina de proyectos">
-      <p class="label" data-reveal>04 — VITRINA</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Lo que se ha impreso</h2>
+      <p class="label" data-reveal data-i18n="vitrina.eyebrow">04 — VITRINA</p>
+      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="vitrina.title">Lo que se ha impreso</h2>
       <div id="tag-filter" class="chip-row chip-row--filter" role="group" aria-label="Filtrar por tag"></div>
       <div id="projects-grid" class="projects-grid" aria-live="polite">
         <div class="skeleton-card skeleton"></div>
         <div class="skeleton-card skeleton"></div>
         <div class="skeleton-card skeleton"></div>
       </div>
-      <p id="empty-state" class="empty-state" hidden>Primer proyecto en camino — la prensa está calentando.</p>
+      <p id="empty-state" class="empty-state" hidden data-i18n="vitrina.empty">Primer proyecto en camino — la prensa está calentando.</p>
     </section>
   </main>
 
@@ -134,34 +139,34 @@
     <div class="project-detail__backdrop" data-close></div>
     <div class="project-detail__panel">
       <button class="project-detail__close" data-close aria-label="Cerrar detalle">&times;</button>
-      <p class="label" id="detail-eyebrow">LÁMINA</p>
+      <p class="label" id="detail-eyebrow" data-i18n="detail.eyebrow">LÁMINA</p>
       <h2 id="detail-title"></h2>
       <p id="detail-summary" class="project-detail__summary"></p>
       <p id="detail-description" class="project-detail__description"></p>
       <div id="detail-tags" class="chip-row"></div>
       <div class="project-detail__links">
-        <a id="detail-repo" href="#" target="_blank" rel="noopener" class="btn btn--ghost">Repo</a>
-        <a id="detail-demo" href="#" target="_blank" rel="noopener" class="btn btn--primary">Demo</a>
+        <a id="detail-repo" href="#" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="detail.repo">Repo</a>
+        <a id="detail-demo" href="#" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="detail.demo">Demo</a>
       </div>
     </div>
   </div>
 
   <footer id="contacto" class="footer-stamp" aria-label="Contacto">
-    <p class="label" data-reveal>05 — CONTACTO</p>
-    <h2 class="section-title" data-reveal style="--reveal-delay: 60ms">Hablemos</h2>
+    <p class="label" data-reveal data-i18n="contacto.eyebrow">05 — CONTACTO</p>
+    <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="contacto.title">Hablemos</h2>
     <div class="footer-stamp__links" data-reveal style="--reveal-delay: 120ms">
       <button id="copy-email" class="stamp-link stamp-link--email" type="button" data-email="diego_yesi8@hotmail.com">
-        <span class="stamp-link__label">Email</span>
-        <span class="stamp-link__hint">Copiar</span>
+        <span class="stamp-link__label" data-i18n="contacto.email">Email</span>
+        <span class="stamp-link__hint" data-i18n="contacto.copy">Copiar</span>
       </button>
-      <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link">LinkedIn</a>
-      <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link" data-i18n="contacto.linkedin">LinkedIn</a>
+      <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link" data-i18n="contacto.github">GitHub</a>
     </div>
-    <p class="footer-stamp__meta">© <span id="footer-year"></span> Diego Gaxiola — esta vitrina se actualiza automáticamente vía AgentChain, sin redeploy manual.</p>
+    <p class="footer-stamp__meta">© <span id="footer-year"></span> Diego Gaxiola — <span data-i18n="contacto.footer">esta vitrina se actualiza automáticamente vía AgentChain, sin redeploy manual.</span></p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
-  <script type="module" src="./app.js?v=2"></script>
+  <script type="module" src="./app.js?v=3"></script>
 </body>
 </html>
