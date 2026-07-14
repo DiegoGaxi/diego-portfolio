@@ -1,0 +1,24 @@
+{
+  "name": "diego-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "bun run src/server/index.ts",
+    "bench": "autocannon -c 50 -d 5 http://localhost:${PORT:-10101}/api/projects"
+  },
+  "dependencies": {
+    "hono": "^4.12.30",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "autocannon": "^8.0.0",
+    "bun-types": "^1.3.14",
+    "gsap": "^3.15.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.4"
+  }
+}
