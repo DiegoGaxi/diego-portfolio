@@ -1,16 +1,21 @@
-# Dependencies
 node_modules/
-
-# Build output
 dist/
 
 # Secrets / environment
 .env
 
-# AgentChain workflow data (runtime artifacts)
-agentchain-workflows/
+# Lienox workflow data (runtime artifacts)
+lienox-workflows/
 
 # OS / editor
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+
+# Logs
 *.log
+logs/
+
+# Build artifacts
+*.pdf
