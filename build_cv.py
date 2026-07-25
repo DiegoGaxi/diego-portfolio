@@ -3,7 +3,7 @@
 
 Faithful to the original 'CV Diego Gaxiola English 2026.pdf', with the
 current role updated from the diego-portfolio website:
-  - Agentcy (Jan 2025 – Current) — current role per portfolio.
+  - Lienox (Jan 2025 – Current) — current role per portfolio.
   - EPAM / BBVA (May 2025 – Jan 2026) — past role, corrected dates.
 """
 from reportlab.lib.pagesizes import letter
@@ -110,9 +110,9 @@ story.append(bullets([
 # Experience
 story.append(Paragraph("Experience", H2))
 
-# Agentcy (current) — from portfolio website
+# Lienox (current) — from portfolio website
 story += job(
-    "Founding Engineer / AI Systems Lead", "Agentcy", "Jan 2025 – Current",
+    "Founding Engineer / AI Systems Lead", "Lienox", "Jan 2025 – Current",
     ["Lienox — multi-agent orchestration platform for autonomous software development (SDLC)."],
     "Designed and built Lienox, a platform that coordinates multiple AI agents to plan, execute and verify engineering workflows with adversarial verification between agents.",
     [
