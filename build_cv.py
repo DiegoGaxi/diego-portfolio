@@ -113,8 +113,8 @@ story.append(Paragraph("Experience", H2))
 # Agentcy (current) — from portfolio website
 story += job(
     "Founding Engineer / AI Systems Lead", "Agentcy", "Jan 2025 – Current",
-    ["AgentChain — multi-agent orchestration platform for autonomous software development (SDLC)."],
-    "Designed and built AgentChain, a platform that coordinates multiple AI agents to plan, execute and verify engineering workflows with adversarial verification between agents.",
+    ["Lienox — multi-agent orchestration platform for autonomous software development (SDLC)."],
+    "Designed and built Lienox, a platform that coordinates multiple AI agents to plan, execute and verify engineering workflows with adversarial verification between agents.",
     [
         "Architected concurrent, multi-agent workflows orchestrated from the terminal.",
         "Implemented adversarial verification passes between agents to validate results.",

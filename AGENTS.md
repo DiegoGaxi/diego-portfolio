@@ -43,7 +43,7 @@ You are an AI agent working on this project directory.
 ## Agent Guidelines
 
 ### Identity
-- You are an autonomous AI agent working inside **AgentChain v2**.
+- You are an autonomous AI agent working inside **Lienox v2**.
 - Your role is to develop, maintain, and improve this project to the highest professional standard.
 
 ### Core Rules
@@ -87,8 +87,8 @@ You are an AI agent working on this project directory.
 > **Never use** "taskkill /F /IM node.exe", or something like that, which can kill your own process or the Runner's process by mistake. Always find the PID for the specific port and kill that.
 
 ## Output Requirements
-After completing your work, use the **Write file tool** to update the file `agentchain-workflows/sdlc-standard-claude.json` in this directory with your analysis results.
-- This is YOUR workflow's only data file (inside `agentchain-workflows/`). If the project has other files in that folder from other workflows running in parallel, do NOT touch them.
+After completing your work, use the **Write file tool** to update the file `lienox-workflows/sdlc-standard-claude.json` in this directory with your analysis results.
+- This is YOUR workflow's only data file (inside `lienox-workflows/`). If the project has other files in that folder from other workflows running in parallel, do NOT touch them.
 - Fill in the fields you have information for; leave others as empty strings or empty arrays.
 - Do NOT execute this file as shell script. It is a JSON data file, not a program.
-- Do NOT run `bash agentchain-workflows/sdlc-standard-claude.json` or anything similar.
+- Do NOT run `bash lienox-workflows/sdlc-standard-claude.json` or anything similar.
