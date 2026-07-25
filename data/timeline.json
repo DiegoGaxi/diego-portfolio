@@ -6,11 +6,11 @@
     "end_date": null,
     "achievements": {
       "es": [
-        "Diseñé y construí AgentChain, una plataforma de orquestación multi-agente para SDLC autónomo.",
+        "Diseñé y construí Lienox, una plataforma de orquestación multi-agente para SDLC autónomo.",
         "Lideré la arquitectura de workflows concurrentes con verificación adversarial entre agentes."
       ],
       "en": [
-        "Designed and built AgentChain, a multi-agent orchestration platform for autonomous SDLC.",
+        "Designed and built Lienox, a multi-agent orchestration platform for autonomous SDLC.",
         "Led the architecture of concurrent workflows with adversarial verification between agents."
       ]
     },
