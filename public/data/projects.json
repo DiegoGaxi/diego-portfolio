@@ -1,18 +1,18 @@
 [
   {
     "id": "593f762a-48f1-48a7-a58a-738336fa9476",
-    "slug": "agentchain-releases",
-    "title": { "es": "AgentChain — Agente personal de orquestación", "en": "AgentChain — Personal orchestration agent" },
+    "slug": "lienox-releases",
+    "title": { "es": "Lienox — Agente personal de orquestación", "en": "Lienox — Personal orchestration agent" },
     "summary": {
       "es": "Agente personal que orquesta tareas y workflows de desarrollo (SDLC autónomo) desde la terminal: encadena pasos, ejecuta y verifica sin intervención manual.",
       "en": "A personal agent that orchestrates development tasks and workflows (autonomous SDLC) from the terminal: chains steps, executes and verifies with no manual intervention."
     },
     "description_long": {
-      "es": "Proyecto personal público que empaqueta AgentChain como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.",
-      "en": "A public personal project that packages AgentChain as a CLI-driven orchestration agent. It coordinates daily engineering workflows —plan, execute and verify— over a Shell runtime, aimed at an autonomous SDLC loop. It is the foundation this very portfolio showcase is built on."
+      "es": "Proyecto personal público que empaqueta Lienox como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.",
+      "en": "A public personal project that packages Lienox as a CLI-driven orchestration agent. It coordinates daily engineering workflows —plan, execute and verify— over a Shell runtime, aimed at an autonomous SDLC loop. It is the foundation this very portfolio showcase is built on."
     },
-    "cover_image_url": "https://raw.githubusercontent.com/DiegoGaxi/agentchain-releases/main/assets/agentchain-space.png",
-    "repo_url": "https://github.com/DiegoGaxi/agentchain-releases",
+    "cover_image_url": "https://raw.githubusercontent.com/DiegoGaxi/lienox-releases/main/assets/agentchain-space.png",
+    "repo_url": "https://github.com/DiegoGaxi/lienox-releases",
     "demo_url": null,
     "tags": ["AI Agents", "Automation", "Shell", "Workflows"],
     "published_at": "2026-07-09T23:11:05-07:00"
