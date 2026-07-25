@@ -36,7 +36,7 @@ create index if not exists idx_timeline_start_date on timeline_entries (start_da
 insert into timeline_entries (company, role, start_date, end_date, achievements, tech_stack, sort_order)
 select * from (values
   ('Agentcy', 'Founding Engineer / AI Systems Lead', date '2026-01-01', null::date,
-    array['Diseñé y construí AgentChain, una plataforma de orquestación multi-agente para SDLC autónomo.', 'Lideré la arquitectura de workflows concurrentes con verificación adversarial entre agentes.'],
+    array['Diseñé y construí Lienox, una plataforma de orquestación multi-agente para SDLC autónomo.', 'Lideré la arquitectura de workflows concurrentes con verificación adversarial entre agentes.'],
     array['Bun','TypeScript','PostgreSQL','Claude API'], 6),
   ('EPAM / BBVA', 'PMO & Front-End Leader', date '2025-05-01', date '2026-01-31',
     array['Automatización de Funds Transfer Pricing (FTP): procesos de cálculo vía gestión SDLC.', 'Desarrollo de vistas y funcionalidades en front-end (Angular 17, TypeScript) y despliegue a producción.'],

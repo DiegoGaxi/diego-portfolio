@@ -1,7 +1,7 @@
 # Diego Portfolio — Dev Master Prompt
 
 ## Qué es
-Portafolio profesional de **Diego Gaxiola**, Software Engineer con 7+ años de experiencia full-stack / AI-native (EPAM/BBVA, Neoris, Fuentebuena, Agentcy). Presenta su trayectoria y sirve como **vitrina viva**: cada proyecto construido en AgentChain se publica aquí a medida que se completa, sin necesidad de redeploy manual (vía tabla `projects` en Postgres + API propia).
+Portafolio profesional de **Diego Gaxiola**, Software Engineer con 7+ años de experiencia full-stack / AI-native (EPAM/BBVA, Neoris, Fuentebuena, Agentcy). Presenta su trayectoria y sirve como **vitrina viva**: cada proyecto construido en Lienox se publica aquí a medida que se completa, sin necesidad de redeploy manual (vía tabla `projects` en Postgres + API propia).
 
 ## Soul thesis
 > Usarlo debe sentirse como hojear un fanzine técnico impreso en risógrafo en una imprenta de barrio en 1978 — tinta plana, grano, un registro que nunca calza perfecto — pero cuyo pulso es el de una terminal analógica que todavía cree, con optimismo, en el futuro del software.
@@ -30,7 +30,7 @@ Prohibido azul/morado índigo por defecto, glassmorphism, y el esqueleto SaaS ge
 - **Backend:** Hono sobre Bun, TypeScript, sirve API + estáticos en un solo proceso.
 - **Frontend:** Vite + TypeScript vanilla + GSAP (para el efecto de impresión/registro y ScrollTrigger), CSS con variables de diseño (tokens de arriba), sin framework pesado (no Next/React) — el sitio es mayormente estático con un puñado de fetches.
 - **DB:** PostgreSQL 16 (user `postgres` / pass `pg`), acceso con `postgres.js` (SQL crudo, sin ORM pesado).
-- **Puerto:** >10100 (asignado por `agentchain project server start`), NUNCA puertos prohibidos.
+- **Puerto:** >10100 (asignado por `lienox project server start`), NUNCA puertos prohibidos.
 
 ## Estructura de contenido (secciones/páginas)
 1. **Home** — hero (nombre, rol, años, disponibilidad) + timeline de experiencia (EPAM/BBVA, Neoris, Fuentebuena, Agentcy) + stack de skills.
