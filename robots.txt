@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diegogaxi.github.io/diego-portfolio/sitemap.xml

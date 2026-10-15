@@ -1,21 +1,147 @@
 [
   {
-    "id": "593f762a-48f1-48a7-a58a-738336fa9476",
-    "slug": "lienox-releases",
-    "title": { "es": "Lienox — Agente personal de orquestación", "en": "Lienox — Personal orchestration agent" },
+    "id": "6187a6b1-2390-51f0-8a22-713264501899",
+    "slug": "wacrm",
+    "title": { "es": "wacrm — CRM de WhatsApp con bandeja de equipo", "en": "wacrm — WhatsApp CRM with a team inbox" },
     "summary": {
-      "es": "Agente personal que orquesta tareas y workflows de desarrollo (SDLC autónomo) desde la terminal: encadena pasos, ejecuta y verifica sin intervención manual.",
-      "en": "A personal agent that orchestrates development tasks and workflows (autonomous SDLC) from the terminal: chains steps, executes and verifies with no manual intervention."
+      "es": "Bifurcación propia de un CRM de WhatsApp de código abierto (MIT): corre con base de datos local, reparte las conversaciones entre el equipo, pasa del bot a una persona y mide a cada agente. Incluye un MCP para que los agentes de Lienox atiendan chats.",
+      "en": "My own fork of an open-source WhatsApp CRM (MIT): it runs on a local database, splits conversations across the team, hands off from the bot to a person and measures each agent. It includes an MCP so Lienox agents can handle chats."
     },
     "description_long": {
-      "es": "Proyecto personal público que empaqueta Lienox como un agente de orquestación operado por CLI. Coordina workflows diarios de ingeniería —planificar, ejecutar y verificar— sobre un runtime en Shell, orientado a un ciclo SDLC autónomo. Es la base sobre la que se construye esta misma vitrina de portafolio.",
-      "en": "A public personal project that packages Lienox as a CLI-driven orchestration agent. It coordinates daily engineering workflows —plan, execute and verify— over a Shell runtime, aimed at an autonomous SDLC loop. It is the foundation this very portfolio showcase is built on."
+      "es": "Bifurcación propia de wacrm, un CRM de WhatsApp de código abierto (licencia MIT) creado por ArnasDon: bandeja compartida, contactos, embudos de venta, difusiones y automatizaciones.\n\nMi trabajo sobre la base v0.7.0: la pasé a una base de datos local (PGlite) con sesiones propias para que todo corra en la misma máquina, sin servicios externos; añadí una bandeja de equipo con vistas Mías, Sin asignar y Equipo, números administrados, reparto rotativo, pausa del bot con traspaso a una persona y métricas por agente; y reforcé que cada contacto tenga una sola conversación aunque lleguen mensajes a la vez.\n\nCorre en semiproducción bajo Lienox, con su manifiesto, una ruta de salud y un build de producción, y trae un servidor MCP para que los agentes lo consulten. Hecho con Next.js 16, React 19, TypeScript y una suite de pruebas automatizadas.",
+      "en": "My own fork of wacrm, an open-source WhatsApp CRM (MIT license) created by ArnasDon: shared inbox, contacts, sales pipelines, broadcasts and automations.\n\nMy work on the v0.7.0 base: I moved it to a local database (PGlite) with its own sessions so everything runs on the same machine with no external services; added a team inbox with Mine, Unassigned and Team views, managed numbers, round-robin assignment, bot pause with handoff to a person and per-agent metrics; and made sure each contact has a single conversation even when messages arrive at the same time.\n\nIt runs in semi-production under Lienox, with its manifest, a health route and a production build, and ships an MCP server so agents can query it. Built with Next.js 16, React 19, TypeScript and an automated test suite."
     },
-    "cover_image_url": "https://raw.githubusercontent.com/DiegoGaxi/lienox-releases/main/assets/lienox-space.png",
-    "repo_url": "https://github.com/DiegoGaxi/lienox-releases",
+    "cover_image_url": null,
+    "repo_url": null,
     "demo_url": null,
-    "tags": ["AI Agents", "Automation", "Shell", "Workflows"],
-    "published_at": "2026-07-09T23:11:05-07:00"
+    "tags": ["Next.js", "TypeScript", "WhatsApp", "CRM", "MCP", "PGlite"],
+    "published_at": "2026-10-14T11:30:00-07:00"
+  },
+  {
+    "id": "c0d8faaa-5daf-50ea-b2a8-2ad8232cc477",
+    "slug": "papeles-al-dia",
+    "title": { "es": "Papeles al día — bóveda de documentos con avisos", "en": "Papeles al día — document vault with expiry alerts" },
+    "summary": {
+      "es": "Bóveda personal cifrada que avisa 60, 30 y 7 días antes de que algo venza, lee los papeles con OCR en la propia computadora y comparte copias con marca de agua y enlace que caduca. PWA con asistente integrado y servidor MCP.",
+      "en": "An encrypted personal vault that warns 60, 30 and 7 days before something expires, reads documents with OCR on your own computer and shares copies with a watermark and an expiring link. A PWA with a built-in assistant and an MCP server."
+    },
+    "description_long": {
+      "es": "Aplicación para tener los papeles personales en un solo lugar y no enterarse tarde de un vencimiento. Los documentos viven cifrados en la computadora del dueño y en su teléfono: nada sensible sale a servicios de terceros, y los documentos se leen localmente con OCR (Tesseract); si esa lectura falla, la app pregunta antes de usar IA.\n\nAl abrirla, lo primero que se ve es qué vence pronto y qué hace falta para renovarlo. Los avisos llegan 60, 30 y 7 días antes, como notificaciones con botones. Las copias que se comparten llevan una marca de agua con el motivo y un enlace que caduca. Un asistente integrado responde consultas por texto, voz o foto, y todo lo que cambia datos se confirma con un toque o se puede deshacer.\n\nServidor en Bun, acceso con llaves de paso (WebAuthn), PDF e imágenes procesados en el servidor, un servidor MCP para agentes y una suite de pruebas automatizadas. Corre en semiproducción bajo Lienox.",
+      "en": "An app to keep personal documents in one place and never find out late about an expiry. Documents live encrypted on the owner's computer and phone: nothing sensitive goes to third-party services, and documents are read locally with OCR (Tesseract); if that fails, the app asks before using AI.\n\nOn opening, the first thing you see is what expires soon and what you need to renew it. Alerts arrive 60, 30 and 7 days ahead as notifications with buttons. Shared copies carry a watermark with the reason and an expiring link. A built-in assistant answers questions by text, voice or photo, and anything that changes data is confirmed with a tap or can be undone.\n\nBun on the server, passkey sign-in (WebAuthn), PDFs and images processed server-side, an MCP server for agents and an automated test suite. It runs in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": null,
+    "tags": ["PWA", "Bun", "OCR", "WebAuthn", "Web Push", "MCP"],
+    "published_at": "2026-10-14T11:00:00-07:00"
+  },
+  {
+    "id": "d2b911ec-19bc-5d15-9590-e11efc74ea34",
+    "slug": "mi-dinero",
+    "title": { "es": "Mi Dinero — finanzas personales por voz y foto", "en": "Mi Dinero — personal finance by voice and photo" },
+    "summary": {
+      "es": "PWA de finanzas personales donde registrar un gasto cuesta lo mismo que mandar un audio: un asistente convierte voz, texto o la foto de un ticket en movimientos, y la app lleva presupuestos, tarjetas, suscripciones y metas, incluso sin conexión.",
+      "en": "A personal-finance PWA where logging an expense costs the same as sending a voice note: an assistant turns speech, text or a receipt photo into transactions, while the app tracks budgets, cards, subscriptions and goals, even offline."
+    },
+    "description_long": {
+      "es": "App de finanzas personales pensada para usarse con una mano, justo después de pagar. No se conecta al banco ni pide claves: todo sale de lo que la persona dice, escribe, fotografía o comparte. Un asistente integrado convierte esa frase en el movimiento, la cuenta y la categoría, y aprende las categorías con el uso; la persona solo confirma con un toque.\n\nLleva los presupuestos, las tarjetas (corte, pago y límite), los meses sin intereses, las suscripciones y las metas de ahorro, y manda avisos con botones tres días antes de cada pago de tarjeta. Funciona sin internet (IndexedDB y Service Worker) y transcribe con Whisper local los audios largos. Cada persona invitada tiene su propia cuenta privada.\n\nServidor en Bun con SQLite, respaldos nocturnos, un servidor MCP para los agentes y una suite de pruebas automatizadas. Corre en semiproducción bajo Lienox.",
+      "en": "A personal-finance app designed to be used one-handed, right after paying. It doesn't connect to the bank or ask for credentials: everything comes from what the person says, types, photographs or shares. A built-in assistant turns that phrase into the transaction, account and category, and learns categories with use; the person just confirms with a tap.\n\nIt tracks budgets, cards (cut-off, payment and limit), interest-free instalments, subscriptions and savings goals, and sends notifications with buttons three days before each card payment. It works offline (IndexedDB and a Service Worker) and transcribes long voice notes with local Whisper. Every invited person gets their own private account.\n\nA Bun server with SQLite, nightly backups, an MCP server for agents and an automated test suite. It runs in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": null,
+    "tags": ["PWA", "Bun", "SQLite", "Whisper", "MCP", "AI"],
+    "published_at": "2026-10-14T10:30:00-07:00"
+  },
+  {
+    "id": "fb082c6e-6c4f-5139-8149-d75a885180ae",
+    "slug": "lista-de-deseos",
+    "title": { "es": "Lista de deseos — vigilante de precios con veredicto", "en": "Wishlist — a price watcher with a verdict" },
+    "summary": {
+      "es": "PWA que vigila el precio de productos de tiendas en línea mexicanas, guarda 90 días de historial y avisa solo cuando conviene comprar, separando las ofertas reales de las falsas, con notificaciones push y reglas por producto.",
+      "en": "A PWA that watches prices at Mexican online stores, keeps 90 days of history and only alerts you when it is worth buying, telling real deals from fake ones, with push notifications and per-product rules."
+    },
+    "description_long": {
+      "es": "App para dejar de revisar precios a mano. Se agrega un producto pegando o compartiendo su enlace desde la app de la tienda; la app lee directo de la tienda el nombre, la foto, el precio, el precio «antes» y las existencias, y lo compara con el historial propio de cada producto de los últimos 90 días para decir si el descuento es real. El veredicto es honesto: un producto nuevo dice «Aún no sé» hasta juntar suficientes lecturas.\n\nRevisa los precios automáticamente cada 6 horas (cada hora en el Buen Fin), con reintentos, y avisa por notificación push con botones solo cuando se cumple una regla de aviso del producto, por ejemplo que llegó al precio que se quería, respetando las horas de silencio.\n\nBun con SQLite, lectores por tienda, un servidor MCP para agentes y una suite de pruebas automatizadas. Corre en semiproducción bajo Lienox.",
+      "en": "An app to stop checking prices by hand. You add a product by pasting or sharing its link from the store app; the app reads the name, photo, price, \"before\" price and stock straight from the store and compares it against each product's own 90-day history to say whether the discount is real. The verdict is honest: a new product says \"I don't know yet\" until enough readings are in.\n\nIt rechecks prices automatically every 6 hours (hourly during Buen Fin), with retries, and sends a push notification with buttons only when a product's alert rule is met, for example when it reaches the price you wanted, respecting quiet hours.\n\nBun with SQLite, per-store readers, an MCP server for agents and an automated test suite. It runs in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": null,
+    "tags": ["PWA", "Bun", "SQLite", "Playwright", "Web Push", "MCP"],
+    "published_at": "2026-10-14T10:00:00-07:00"
+  },
+  {
+    "id": "ee6a516a-b583-5635-a9ff-f7d251c9314c",
+    "slug": "portal-mistico",
+    "title": { "es": "Portal Místico — sitio de ventas y panel para una creadora", "en": "Portal Místico — sales site and dashboard for a content creator" },
+    "summary": {
+      "es": "Sitio para una creadora de contenido que convierte las vistas de sus transmisiones en ventas: landing con SEO, JSON-LD y llms.txt, catálogo de servicios con pagos de Stripe, correos con Resend y un panel con acceso por enlace mágico.",
+      "en": "A site for a content creator that turns live-stream views into sales: a landing page with SEO, JSON-LD and llms.txt, a service catalogue with Stripe payments, emails through Resend and a dashboard with magic-link sign-in."
+    },
+    "description_long": {
+      "es": "Web propia de una creadora de contenido que necesita convertir las vistas de sus transmisiones en visitas y ventas de sus servicios. La landing pública lee precios y plazos de la base de datos y está optimizada para buscadores y asistentes de IA: metadatos por página, imagen social generada, robots, sitemap, JSON-LD y un llms.txt.\n\nLos pagos pasan por Stripe; en pruebas corren en modo simulado con el mismo contrato, firmando y enviando el evento real al webhook. Los correos salen por Resend, y la creadora administra todo desde un panel al que entra con un enlace mágico.\n\nNext.js 16 (App Router), TypeScript, Tailwind v4, PostgreSQL con Prisma y Bun, con pruebas de la API, de las reglas de negocio y de las restricciones de la base de datos. En semiproducción bajo Lienox.",
+      "en": "A site for a content creator who needs to turn live-stream views into visits and sales of her services. The public landing page reads prices and terms from the database and is optimised for search engines and AI assistants: per-page metadata, a generated social image, robots, sitemap, JSON-LD and an llms.txt.\n\nPayments go through Stripe; in tests they run in a simulated mode with the same contract, signing and sending the real event to the webhook. Emails go out through Resend, and the creator manages everything from a dashboard she signs into with a magic link.\n\nNext.js 16 (App Router), TypeScript, Tailwind v4, PostgreSQL with Prisma and Bun, with tests for the API, the business rules and the database constraints. In semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": null,
+    "tags": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "SEO"],
+    "published_at": "2026-10-12T18:00:00-07:00"
+  },
+  {
+    "id": "9b917a22-67de-52ee-af59-4da4c842599d",
+    "slug": "calculadora-inmobiliaria",
+    "title": { "es": "Calculadora inmobiliaria — la tasa que el anuncio no dice", "en": "Real-estate calculator — the rate the ad doesn't show" },
+    "summary": {
+      "es": "Calculadora para quien evalúa comprar un terreno o una casa a plazos: deduce la tasa de interés escondida del anuncio, avisa cuando un «sin intereses» no cuadra y simula enganche, plazo y abonos. PWA sin cuentas ni servidor: los datos quedan en el navegador.",
+      "en": "A calculator for anyone weighing a plot or house bought in instalments: it deduces the rate hidden in the listing, flags a \"no interest\" offer that does not add up and simulates down payment, term and extra payments. A PWA with no accounts or backend; data stays in your browser."
+    },
+    "description_long": {
+      "es": "Los anuncios de terrenos y casas en México dan precio, enganche, mensualidad y número de meses, pero casi nunca la tasa. Esta calculadora la deduce con esos datos, avisa cuando un «sin intereses» no cuadra y dice cuánto se pagaría al mes, cuánto en total y qué parte del sueldo se llevaría la mensualidad, en menos de diez segundos y con el celular en la mano.\n\nSimula otro enganche, otro plazo y abonos adelantados (con los meses e intereses que se ahorran), muestra la tabla mes a mes con descarga en CSV, gráficas de cómo baja la deuda y de cuánto se va en intereses, y genera un resumen en PDF de cada inmueble; se pueden guardar y comparar varios.\n\nPWA instalable que abre sin internet, hecha con React, Vite, Tailwind y Recharts; sin servidor, cuentas ni pagos, con los datos en el navegador. Publicada en semiproducción bajo Lienox.",
+      "en": "Property listings in Mexico give a price, down payment, monthly payment and number of months, but almost never the rate. This calculator deduces it from those figures, flags a \"no interest\" offer that does not add up and says how much you would pay per month, how much in total and what share of your salary the payment would take, in under ten seconds and with the phone in your hand.\n\nIt simulates another down payment, another term and early payments (with the months and interest saved), shows the month-by-month table with CSV download, charts of how the debt falls and how much goes to interest, and generates a PDF summary of each property; several can be saved and compared.\n\nAn installable PWA that opens offline, built with React, Vite, Tailwind and Recharts; no backend, accounts or payments, with data kept in the browser. Published in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": "https://inmuebles.lienox.com",
+    "tags": ["React", "Vite", "PWA", "Tailwind", "Recharts"],
+    "published_at": "2026-10-12T12:00:00-07:00"
+  },
+  {
+    "id": "c67232fa-5c9d-5ab2-9d80-c8e66d8c440f",
+    "slug": "mis-medicamentos",
+    "title": { "es": "Mis Medicamentos — recordatorios en una PWA", "en": "Mis Medicamentos — reminders in a PWA" },
+    "summary": {
+      "es": "PWA personal, sin framework, para llevar el orden de las tomas del día: una pantalla grande dice qué toca ahora y qué sigue con cuenta regresiva, los avisos traen botones (Tomada o Posponer) y todo funciona sin conexión. Incluye un servidor MCP.",
+      "en": "A personal, framework-free PWA to keep the day's doses in order: one big screen says what is due now and what is next with a countdown, notifications carry Taken or Snooze buttons, and everything works offline. Includes an MCP server."
+    },
+    "description_long": {
+      "es": "Aplicación personal para no perder el hilo de las tomas diarias. La regla de diseño fue la forma más sencilla posible: la pantalla «Hoy» muestra en grande lo que toca ahora, con un botón «Tomada», lo siguiente con cuenta regresiva y la lista del día; todo lo demás vive en Ajustes.\n\nEstá hecha en HTML, CSS y JavaScript con módulos ES, sin framework: los datos viven en IndexedDB, un Service Worker programa los avisos con acciones (Tomada, Posponer) y los reconcilia al abrir la app, y la app es honesta con lo que el dispositivo permite, con un botón para probar un aviso en un minuto. Sin telemetría.\n\nCorre en semiproducción bajo Lienox, en la computadora del dueño y publicada en un subdominio, con respaldos automáticos, un servidor MCP propio para los agentes y pruebas automatizadas.",
+      "en": "A personal app to keep track of daily doses. The design rule was the simplest possible form: the \"Today\" screen shows what is due now in large type with a \"Taken\" button, what is next with a countdown, and the day's list; everything else lives in Settings.\n\nIt is built with HTML, CSS and ES-module JavaScript, no framework: data lives in IndexedDB, a Service Worker schedules notifications with actions (Taken, Snooze) and reconciles them when the app opens, and the app is honest about what the device allows, with a button to test a notification in one minute. No telemetry.\n\nIt runs in semi-production under Lienox, on the owner's computer and published on a subdomain, with automatic backups, its own MCP server for agents and automated tests."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": null,
+    "tags": ["PWA", "JavaScript", "Service Worker", "IndexedDB", "MCP", "Bun"],
+    "published_at": "2026-10-06T12:00:00-07:00"
+  },
+  {
+    "id": "593f762a-48f1-48a7-a58a-738336fa9476",
+    "slug": "lienox",
+    "title": { "es": "Lienox — Tu equipo de agentes de IA, en tu máquina", "en": "Lienox — Your AI agent team, on your machine" },
+    "summary": {
+      "es": "App de escritorio local-first que corre equipos de agentes de IA en paralelo en tu propia máquina: workflows multi-nodo, tareas programadas 24/7, control por voz y un navegador integrado por agente. Con tus llaves de IA y precio fijo.",
+      "en": "A local-first desktop app that runs teams of AI agents in parallel on your own machine: multi-node workflows, 24/7 scheduled tasks, voice control and a built-in browser for every agent. Bring your own AI keys, flat pricing."
+    },
+    "description_long": {
+      "es": "Lienox es una app de escritorio local-first que pone agentes de IA a automatizar cada área de un negocio —ventas, soporte, marketing, operaciones y código— en la propia máquina de quien la usa, con sus llaves de IA (BYOK), precio fijo y sin medidor de créditos.\n\nSe le habla a Lienox, el compañero de IA, por texto o por voz, y él arma los workflows: flujos multi-nodo donde varios agentes trabajan en paralelo con verificación respaldada en evidencia, tareas programadas que corren 24/7 y un navegador integrado donde cada agente tiene su propia pestaña con cursor visible.\n\nFunciona con Claude Code, Codex, OpenCode, Kimi, OpenRouter, NVIDIA o un modelo local vía Ollama, y tiene plan gratuito para Linux, Windows y macOS. El repositorio público aloja las descargas y el canal de actualizaciones; el código fuente vive en un repositorio privado.",
+      "en": "Lienox is a local-first desktop app that puts AI agents to work automating every area of a business —sales, support, marketing, operations and code— on the user's own machine, with their own AI keys (BYOK), flat pricing and no credit meter.\n\nYou talk to Lienox, the AI companion, by text or voice, and it builds the workflows: multi-node flows where several agents work in parallel with evidence-backed verification, scheduled tasks that run 24/7, and a built-in browser where every agent gets its own tab with a visible cursor.\n\nIt works with Claude Code, Codex, OpenCode, Kimi, OpenRouter, NVIDIA or a local model through Ollama, and has a free plan for Linux, Windows and macOS. The public repository hosts the downloads and the update feed; the source code lives in a private repository."
+    },
+    "cover_image_url": null,
+    "repo_url": "https://github.com/DiegoGaxi/lienox-releases",
+    "demo_url": "https://lienox.com",
+    "tags": ["AI Agents", "Workflows", "Automation", "Local-first", "Voice"],
+    "published_at": "2026-08-13T15:15:21-07:00"
   },
   {
     "id": "090b7d08-3382-47e2-9b6b-590e9464c521",

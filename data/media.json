@@ -1,0 +1,186 @@
+{
+  "lienox": {
+    "kind": "desktop",
+    "shots": [
+      {
+        "src": "projects/lienox/1.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Página de inicio de lienox.com: «Un equipo que sigue trabajando mientras no estás»",
+          "en": "Home page of lienox.com: \"A team that keeps working while you are away\""
+        }
+      },
+      {
+        "src": "projects/lienox/2.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Sección «Cómo funciona» de lienox.com: de una frase al trabajo terminado",
+          "en": "How-it-works section of lienox.com: from one sentence to finished work"
+        }
+      }
+    ]
+  },
+  "wacrm": {
+    "kind": "desktop",
+    "shots": [
+      {
+        "src": "projects/wacrm/1.webp",
+        "w": 1024,
+        "h": 475,
+        "alt": {
+          "es": "Panel principal de wacrm con conversaciones, contactos, negocios y difusiones",
+          "en": "wacrm dashboard with conversations, contacts, deals and broadcasts"
+        }
+      },
+      {
+        "src": "projects/wacrm/2.webp",
+        "w": 1024,
+        "h": 475,
+        "alt": {
+          "es": "Ajustes de wacrm: conexión con WhatsApp Business",
+          "en": "wacrm settings: WhatsApp Business connection"
+        }
+      }
+    ]
+  },
+  "papeles-al-dia": {
+    "kind": "phone",
+    "shots": [
+      {
+        "src": "projects/papeles-al-dia/1.webp",
+        "w": 390,
+        "h": 844,
+        "alt": {
+          "es": "Papeles al día: un documento que vence en 30 días con los requisitos para renovarlo",
+          "en": "Papeles al día: a document expiring in 30 days with its renewal requirements"
+        }
+      },
+      {
+        "src": "projects/papeles-al-dia/2.webp",
+        "w": 390,
+        "h": 844,
+        "alt": {
+          "es": "Papeles al día: copia compartida con marca de agua y enlace que caduca",
+          "en": "Papeles al día: a shared copy with a watermark and an expiring link"
+        }
+      }
+    ]
+  },
+  "mi-dinero": {
+    "kind": "phone",
+    "shots": [
+      {
+        "src": "projects/mi-dinero/1.webp",
+        "w": 390,
+        "h": 844,
+        "alt": {
+          "es": "Mi Dinero: pantalla Hoy con lo que se puede gastar y los últimos movimientos",
+          "en": "Mi Dinero: Today screen with what you can spend and the latest transactions"
+        }
+      },
+      {
+        "src": "projects/mi-dinero/2.webp",
+        "w": 390,
+        "h": 844,
+        "alt": {
+          "es": "Mi Dinero: metas de ahorro en tema oscuro",
+          "en": "Mi Dinero: savings goals in dark theme"
+        }
+      }
+    ]
+  },
+  "lista-de-deseos": {
+    "kind": "phone",
+    "shots": [
+      {
+        "src": "projects/lista-de-deseos/1.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Lista de deseos: productos que bajaron de precio y la lista personal",
+          "en": "Wishlist: products that dropped in price and the personal list"
+        }
+      },
+      {
+        "src": "projects/lista-de-deseos/2.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Lista de deseos: veredicto de oferta falsa con el precio anterior y el historial",
+          "en": "Wishlist: a fake-deal verdict with the previous price and history"
+        }
+      }
+    ]
+  },
+  "portal-mistico": {
+    "kind": "desktop",
+    "shots": [
+      {
+        "src": "projects/portal-mistico/1.webp",
+        "w": 945,
+        "h": 690,
+        "alt": {
+          "es": "Portal Místico: página para elegir un oráculo del 1 al 5",
+          "en": "Portal Místico: page to pick an oracle from 1 to 5"
+        }
+      },
+      {
+        "src": "projects/portal-mistico/2.webp",
+        "w": 1000,
+        "h": 572,
+        "alt": {
+          "es": "Portal Místico: panel de la creadora con clics y conversión de sus transmisiones",
+          "en": "Portal Místico: creator dashboard with clicks and conversion per live stream"
+        }
+      }
+    ]
+  },
+  "calculadora-inmobiliaria": {
+    "kind": "phone",
+    "shots": [
+      {
+        "src": "projects/calculadora-inmobiliaria/1.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Calculadora inmobiliaria: lista de inmuebles con mensualidad y total",
+          "en": "Real-estate calculator: list of properties with monthly payment and total"
+        }
+      },
+      {
+        "src": "projects/calculadora-inmobiliaria/2.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Calculadora inmobiliaria: la respuesta con la mensualidad y la tasa de interés escondida",
+          "en": "Real-estate calculator: the answer with the monthly payment and the hidden interest rate"
+        }
+      }
+    ]
+  },
+  "mis-medicamentos": {
+    "kind": "phone",
+    "shots": [
+      {
+        "src": "projects/mis-medicamentos/1.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Mis Medicamentos: pantalla Hoy con la próxima toma y su cuenta regresiva",
+          "en": "Mis Medicamentos: Today screen with the next dose and its countdown"
+        }
+      },
+      {
+        "src": "projects/mis-medicamentos/2.webp",
+        "w": 780,
+        "h": 1688,
+        "alt": {
+          "es": "Mis Medicamentos: formulario para agregar un medicamento con su horario",
+          "en": "Mis Medicamentos: form to add a medication with its schedule"
+        }
+      }
+    ]
+  }
+}

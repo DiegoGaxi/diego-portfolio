@@ -1,178 +1,352 @@
 <!doctype html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <link rel="canonical" href="https://diegogaxi.github.io/diego-portfolio/" />
+  <link rel="alternate" hreflang="es" href="https://diegogaxi.github.io/diego-portfolio/" />
+  <link rel="alternate" hreflang="en" href="https://diegogaxi.github.io/diego-portfolio/" />
+  <link rel="alternate" hreflang="x-default" href="https://diegogaxi.github.io/diego-portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Diego Gaxiola — Software Engineer, AI-native" />
+  <meta property="og:description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos con Lienox." />
+  <meta property="og:url" content="https://diegogaxi.github.io/diego-portfolio/" />
+  <meta property="og:image" content="https://diegogaxi.github.io/diego-portfolio/diego-portrait.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diego Gaxiola — Software Engineer, AI-native" />
+  <meta name="twitter:description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos con Lienox." />
+  <meta name="twitter:image" content="https://diegogaxi.github.io/diego-portfolio/diego-portrait.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Diego Gaxiola","jobTitle":"Software Engineer","url":"https://diegogaxi.github.io/diego-portfolio/","sameAs":["https://www.linkedin.com/in/diegogax/","https://github.com/DiegoGaxi"],"knowsAbout":["TypeScript","JavaScript","Java","SQL","Hono","React","Spring Boot","AWS","PostgreSQL"]}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diego Gaxiola — Software Engineer, AI-native</title>
-  <meta name="description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos en Lienox." />
-  <meta name="theme-color" content="#f3ead8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)" />
-  <link rel="icon" href="./favicon-diego.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="./favicon-diego.svg" />
+  <meta name="description" content="Portafolio de Diego Gaxiola, Software Engineer full-stack con 7+ años de experiencia, AI-native. Vitrina viva de proyectos construidos con Lienox." />
+  <meta name="theme-color" content="#f3ead8" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1a18'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23f3ead8' text-anchor='middle'%3EDG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css?v=3" />
-  <script>
-    // Fija el tema antes del primer pintado para evitar parpadeo (FOUC).
-    (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (t !== 'light' && t !== 'dark') {
-          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/main-CjXrwZVT.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BlV8xC7b.css">
 </head>
 <body>
-  <div class="grain-overlay" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <a href="#main" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
 
-  <a class="skip-link" href="#hero">Saltar al contenido</a>
+  <header class="site-header" id="site-header">
+    <a href="#hero" class="site-header__mark" data-i18n-attrs="aria-label:a11y.home" aria-label="Diego Gaxiola — inicio">
+      <span>DG</span>
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="4.5"/><path d="M8 0.5v15M0.5 8h15"/></svg>
+    </a>
 
-  <header class="masthead" id="masthead">
-    <span class="masthead__mark"><span class="masthead__dot" aria-hidden="true"></span>DG—01</span>
-    <nav class="masthead__nav" aria-label="Navegación principal">
-      <a href="#trayectoria" data-nav data-i18n="nav.trayectoria">Trayectoria</a>
-      <a href="#vitrina" data-nav data-i18n="nav.proyectos">Proyectos</a>
-      <a href="#contacto" data-nav data-i18n="nav.contacto">Contacto</a>
-      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+    <nav class="site-nav" id="site-nav" data-i18n-attrs="aria-label:a11y.nav" aria-label="Principal">
+      <a href="#vitrina" data-section="vitrina" data-i18n="nav.proyectos">Proyectos</a>
+      <a href="#trayectoria" data-section="trayectoria" data-i18n="nav.trayectoria">Trayectoria</a>
+      <a href="#skills" data-section="skills" data-i18n="nav.stack">Stack</a>
+      <a href="#agenda" data-section="agenda" data-i18n="nav.agenda">Agenda</a>
+      <a href="#contacto" data-section="contacto" data-i18n="nav.contacto">Contacto</a>
+    </nav>
+
+    <div class="site-tools">
+      <div class="lang-switch" role="group" data-i18n-attrs="aria-label:a11y.lang" aria-label="Idioma">
         <button type="button" class="lang-switch__btn" data-lang="es" aria-pressed="true">ES</button>
-        <span class="lang-switch__sep" aria-hidden="true">/</span>
         <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
-        <span class="theme-toggle__track"><span class="theme-toggle__thumb"></span></span>
-        <span class="theme-toggle__label">DÍA</span>
+      <button type="button" id="motion-toggle" class="icon-btn" aria-pressed="false" data-i18n-attrs="aria-label:motion.toggle;title:motion.toggle" aria-label="Reducir movimiento" title="Reducir movimiento">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path class="motion-wave" d="M2 12c2.5-6 5-6 7.5 0s5 6 7.5 0 3-4 5-3"/>
+          <path class="motion-slash" d="M4 20 20 4"/>
+        </svg>
       </button>
-    </nav>
+      <button type="button" id="menu-toggle" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="site-nav" data-i18n-attrs="aria-label:nav.menu" aria-label="Menú">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path class="menu-bars" d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section id="hero" class="hero" aria-label="Presentación">
-      <div class="hero__text">
-        <p class="label" data-reveal data-i18n="hero.eyebrow">01 — SOBRE MÍ</p>
-        <h1 class="hero__name" data-reveal style="--reveal-delay: 60ms">Diego Gaxiola</h1>
-        <p class="hero__role" data-reveal style="--reveal-delay: 140ms"><span data-i18n="hero.role">Software Engineer</span> <span class="hero__role-accent" data-i18n="hero.roleAccent">· AI-native</span></p>
-        <p class="hero__meta" data-reveal style="--reveal-delay: 220ms">
-          <span id="years-badge" class="hero__years">7+ años</span> <span data-i18n="hero.years">de experiencia full-stack</span>
-          <span id="availability-badge" class="badge badge--available" data-i18n="hero.available">Disponible para proyectos</span>
-        </p>
-        <div class="hero__ctas" data-reveal style="--reveal-delay: 300ms">
-          <a href="#vitrina" class="btn btn--primary" data-scroll-target="#vitrina" data-i18n="hero.ctaProjects">Ver proyectos</a>
-          <a href="#contacto" class="btn btn--ghost" data-scroll-target="#contacto" data-i18n="hero.ctaContact">Contactar</a>
+  <main id="main">
+    <section id="hero" class="hero" aria-labelledby="hero-name">
+      <svg class="hero__marks" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <g class="hero__crop" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M40 92h36M40 92v36"/>
+          <path d="M1400 92h-36M1400 92v36"/>
+          <path d="M40 860h36M40 860v-36"/>
+          <path d="M1400 860h-36M1400 860v-36"/>
+        </g>
+      </svg>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__name" id="hero-name">
+            <span class="hero__line" data-intro-line>Diego</span>
+            <span class="hero__line" data-intro-line>Gaxiola</span>
+          </h1>
+          <p class="hero__role" data-intro><span data-i18n="hero.role">Software Engineer</span> <em class="hero__role-accent" data-i18n="hero.roleAccent">· AI-native</em></p>
+          <p class="hero__lede" data-intro data-i18n="hero.lede">Hoy construyo Lienox: una app donde equipos de agentes de IA trabajan en tu propia máquina.</p>
+          <p class="hero__meta" data-intro>
+            <span id="years-badge" class="hero__years">8+ años</span>
+            <span data-i18n="hero.years">de experiencia full-stack</span>
+            <span id="availability-badge" class="badge badge--available" data-i18n="hero.available">Disponible para proyectos</span>
+          </p>
+          <div class="hero__ctas" data-intro>
+            <a href="#vitrina" class="cta cta--primary" data-scroll-target="#vitrina" data-track="Ver proyectos"><span data-i18n="hero.ctaProjects">Ver proyectos</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+            <a href="#agenda" class="cta cta--ghost" data-book data-track="Agendar cita" data-i18n="hero.ctaBook">Agendar cita</a>
+            <a href="#contacto" class="cta cta--ghost" data-scroll-target="#contacto" data-track="Contactar" data-i18n="hero.ctaContact">Contactar</a>
+            <a href="./cv/diego-gaxiola-cv-es.pdf" id="cv-download" class="cta cta--link" download><span data-i18n="hero.ctaCv">Descargar CV</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero__scene" id="hero-scene">
+          <div class="hero__target" data-parallax="0.35" aria-hidden="true">
+            <svg viewBox="0 0 1000 1000" focusable="false">
+              <circle cx="500" cy="500" r="480"/>
+              <circle cx="500" cy="500" r="400" stroke-dasharray="2 9"/>
+              <path d="M500 0v1000M0 500h1000"/>
+            </svg>
+          </div>
+          <canvas class="hero__canvas" id="hero-canvas" role="img" aria-hidden="true" data-i18n-attrs="aria-label:hero.sceneAlt" aria-label="Retrato de Diego Gaxiola sobre una pila de láminas de impresión"></canvas>
+          <figure class="hero__fallback" id="hero-fallback">
+            <img class="hero__portrait" src="./diego-portrait.jpg" data-i18n-attrs="alt:hero.portraitAlt" alt="Retrato de Diego Gaxiola" width="400" height="400" fetchpriority="high" />
+            <span class="hero__portrait-frame" aria-hidden="true"></span>
+          </figure>
         </div>
       </div>
-      <figure class="hero__portrait" id="hero-portrait" data-reveal style="--reveal-delay: 180ms">
-        <img class="hero__portrait-img" src="https://files.catbox.moe/eurtky.jpg" alt="Retrato de Diego Gaxiola" width="400" height="400" />
-        <span class="hero__portrait-frame" aria-hidden="true"></span>
-        <span class="hero__portrait-tag" aria-hidden="true">LÁMINA 00 · AUTOR</span>
-      </figure>
-      <a class="hero__scroll-cue" href="#trayectoria" data-scroll-target="#trayectoria" aria-label="Bajar a trayectoria">
-        <span class="hero__scroll-cue-line"></span>
-        <span class="hero__scroll-cue-text" data-i18n="hero.scroll">SCROLL</span>
-      </a>
     </section>
 
-    <section id="trayectoria" class="timeline-section" aria-label="Trayectoria profesional">
-      <p class="label" data-reveal data-i18n="timeline.eyebrow">02 — TRAYECTORIA</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="timeline.title">Dónde he construido</h2>
-      <ol id="timeline-list" class="timeline-list" aria-live="polite"></ol>
+    <div id="vitrina" class="work">
+      <section class="spotlight" id="lienox" aria-labelledby="lienox-title">
+        <div class="spotlight__inner">
+          <div class="spotlight__copy">
+            <h2 class="spotlight__title" id="lienox-title" data-split>Lienox</h2>
+            <p class="spotlight__lead" data-reveal data-i18n="spotlight.lead">Una app de escritorio local-first donde equipos de agentes de IA trabajan en paralelo, en tu propia máquina y con tus propias llaves.</p>
+            <ul class="capabilities">
+              <li data-reveal>
+                <h3 data-i18n="spotlight.cap1.t">Agentes por área</h3>
+                <p data-i18n="spotlight.cap1.d">Ventas, soporte, marketing, operaciones y código, cada uno con su rol.</p>
+              </li>
+              <li data-reveal>
+                <h3 data-i18n="spotlight.cap2.t">Workflows multi-nodo</h3>
+                <p data-i18n="spotlight.cap2.d">Describes el resultado y Lienox arma el flujo; varios agentes trabajan en paralelo.</p>
+              </li>
+              <li data-reveal>
+                <h3 data-i18n="spotlight.cap3.t">Tareas programadas</h3>
+                <p data-i18n="spotlight.cap3.d">Corren solas, 24/7, con verificación respaldada en evidencia.</p>
+              </li>
+              <li data-reveal>
+                <h3 data-i18n="spotlight.cap4.t">Voz y navegador propio</h3>
+                <p data-i18n="spotlight.cap4.d">Delegas hablando; cada agente tiene su propia pestaña con cursor visible.</p>
+              </li>
+            </ul>
+            <div class="spotlight__links" data-reveal>
+              <a id="spotlight-site" class="cta cta--light" href="https://lienox.com" target="_blank" rel="noopener"><span data-i18n="project.demo">Ver sitio</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <a id="spotlight-repo" class="cta cta--outline-light" href="https://github.com/DiegoGaxi/lienox-releases" target="_blank" rel="noopener"><span data-i18n="project.repo">Repositorio</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+
+          <figure class="spotlight__graphic" data-parallax="0.3">
+            <div class="orchestra" id="orchestra"></div>
+            <figcaption>
+              <span data-i18n="orchestra.caption">Un pedido, varios agentes en paralelo, cada resultado verificado.</span>
+              <button type="button" class="link-btn" id="orchestra-replay" data-i18n="orchestra.replay">Repetir animación</button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="index" id="proyectos" aria-labelledby="index-title">
+        <div class="section-head">
+          <h2 class="section-title" id="index-title" data-split data-i18n="vitrina.title">Proyectos</h2>
+          <p class="section-lede" data-reveal data-i18n="vitrina.lede">Lo que he construido, de lo más reciente a lo más antiguo.</p>
+        </div>
+        <div id="tag-filter" class="filter" role="group" data-i18n-attrs="aria-label:vitrina.filter" aria-label="Filtrar por tecnología"></div>
+        <p id="route-notice" class="notice" role="status" hidden></p>
+        <ol id="projects-index" class="rows" aria-live="polite">
+          <li class="row row--skeleton skeleton" aria-hidden="true"></li>
+          <li class="row row--skeleton skeleton" aria-hidden="true"></li>
+          <li class="row row--skeleton skeleton" aria-hidden="true"></li>
+        </ol>
+        <p id="empty-state" class="empty-state" hidden data-i18n="vitrina.empty">Primer proyecto en camino — la prensa está calentando.</p>
+      </section>
+    </div>
+
+    <section id="trayectoria" class="career" aria-labelledby="career-title">
+      <div class="section-head">
+        <h2 class="section-title" id="career-title" data-split data-i18n="timeline.title">Dónde he construido</h2>
+      </div>
+      <div class="timeline-wrap">
+        <span class="timeline__track" aria-hidden="true"><span class="timeline__progress"></span></span>
+        <ol id="timeline-list" class="timeline" aria-live="polite"></ol>
+      </div>
     </section>
 
-    <section id="skills" class="skills-section" aria-label="Stack y habilidades">
-      <p class="label" data-reveal data-i18n="skills.eyebrow">03 — STACK</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="skills.title">Con qué trabajo</h2>
-      <div class="skills-grid">
-        <div class="skills-group" data-reveal>
+    <section id="skills" class="stack" aria-labelledby="stack-title">
+      <div class="section-head">
+        <h2 class="section-title" id="stack-title" data-split data-i18n="skills.title">Con qué trabajo</h2>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row" data-marquee="-1">
+          <span>TypeScript</span><i></i><span>Bun</span><i></i><span>Hono</span><i></i><span>PostgreSQL</span><i></i><span>Claude API</span><i></i><span>MCP</span><i></i><span>Three.js</span><i></i><span>GSAP</span><i></i>
+          <span>TypeScript</span><i></i><span>Bun</span><i></i><span>Hono</span><i></i><span>PostgreSQL</span><i></i><span>Claude API</span><i></i><span>MCP</span><i></i><span>Three.js</span><i></i><span>GSAP</span><i></i>
+        </div>
+        <div class="marquee__row marquee__row--outline" data-marquee="1">
+          <span>Angular</span><i></i><span>Spring Boot</span><i></i><span>Ruby on Rails</span><i></i><span>React</span><i></i><span>Kafka</span><i></i><span>Docker</span><i></i><span>AWS</span><i></i><span>RAG</span><i></i>
+          <span>Angular</span><i></i><span>Spring Boot</span><i></i><span>Ruby on Rails</span><i></i><span>React</span><i></i><span>Kafka</span><i></i><span>Docker</span><i></i><span>AWS</span><i></i><span>RAG</span><i></i>
+        </div>
+      </div>
+      <div class="stack__groups">
+        <div class="stack__group" data-reveal>
           <h3 data-i18n="skills.languages">Lenguajes</h3>
-          <div class="chip-row">
-            <span class="tech-chip">TypeScript</span>
-            <span class="tech-chip">JavaScript</span>
-            <span class="tech-chip">Java</span>
-            <span class="tech-chip">SQL</span>
-          </div>
+          <ul class="chips"><li class="chip">TypeScript</li><li class="chip">JavaScript</li><li class="chip">Java</li><li class="chip">Ruby</li><li class="chip">SQL</li></ul>
         </div>
-        <div class="skills-group" data-reveal style="--reveal-delay: 80ms">
+        <div class="stack__group" data-reveal>
           <h3 data-i18n="skills.frameworks">Frameworks</h3>
-          <div class="chip-row">
-            <span class="tech-chip">Hono</span>
-            <span class="tech-chip">React</span>
-            <span class="tech-chip">Spring Boot</span>
-            <span class="tech-chip">Vite</span>
-          </div>
+          <ul class="chips"><li class="chip">Hono</li><li class="chip">React</li><li class="chip">Angular</li><li class="chip">Spring Boot</li><li class="chip">Rails</li><li class="chip">Vite</li></ul>
         </div>
-        <div class="skills-group" data-reveal style="--reveal-delay: 160ms">
+        <div class="stack__group" data-reveal>
           <h3 data-i18n="skills.cloud">Cloud / Infra</h3>
-          <div class="chip-row">
-            <span class="tech-chip">AWS</span>
-            <span class="tech-chip">Docker</span>
-            <span class="tech-chip">PostgreSQL</span>
-            <span class="tech-chip">Kafka</span>
-          </div>
+          <ul class="chips"><li class="chip">Bun</li><li class="chip">AWS</li><li class="chip">Docker</li><li class="chip">PostgreSQL</li><li class="chip">Kafka</li></ul>
         </div>
-        <div class="skills-group" data-reveal style="--reveal-delay: 240ms">
+        <div class="stack__group" data-reveal>
           <h3 data-i18n="skills.ai">IA</h3>
-          <div class="chip-row">
-            <span class="tech-chip">Claude API</span>
-            <span class="tech-chip">Agentic Workflows</span>
-            <span class="tech-chip">RAG</span>
-          </div>
+          <ul class="chips"><li class="chip">Claude API</li><li class="chip">MCP</li><li class="chip">Agentic Workflows</li><li class="chip">RAG</li></ul>
+        </div>
+        <div class="stack__group" data-reveal>
+          <h3 data-i18n="skills.motion">Motion y 3D</h3>
+          <ul class="chips"><li class="chip">Three.js</li><li class="chip">WebGL</li><li class="chip">GSAP</li></ul>
         </div>
       </div>
     </section>
 
-    <section id="vitrina" class="vitrina-section" aria-label="Vitrina de proyectos">
-      <p class="label" data-reveal data-i18n="vitrina.eyebrow">04 — VITRINA</p>
-      <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="vitrina.title">Lo que se ha impreso</h2>
-      <div id="tag-filter" class="chip-row chip-row--filter" role="group" aria-label="Filtrar por tag"></div>
-      <div id="projects-grid" class="projects-grid" aria-live="polite">
-        <div class="skeleton-card skeleton"></div>
-        <div class="skeleton-card skeleton"></div>
-        <div class="skeleton-card skeleton"></div>
+    <section id="agenda" class="agenda" aria-labelledby="agenda-title">
+      <div class="agenda__inner">
+        <div class="section-head">
+          <h2 class="section-title" id="agenda-title" data-split data-i18n="agenda.title">Agenda una cita</h2>
+          <p class="section-lede" data-reveal data-i18n="agenda.lede">Elige un día y una hora. Son 30 minutos por videollamada, de lunes a viernes, de 9:00 a. m. a 6:30 p. m. (hora del Pacífico).</p>
+        </div>
+
+        <div class="sheet" id="agenda-body" data-step="pick" aria-busy="true">
+          <header class="sheet__top">
+            <img class="host__photo" src="./diego-portrait.jpg" alt="" width="48" height="48" loading="lazy" />
+            <div class="host__id">
+              <p class="host__title" data-i18n="agenda.host">Videollamada de 30 minutos con Diego</p>
+            </div>
+            <div class="seg" id="agenda-tz" role="group" data-i18n-attrs="aria-label:agenda.tzLabel" hidden></div>
+          </header>
+
+          <div class="sheet__body">
+            <div class="pane pane--pick" id="pane-pick">
+              <div class="pick__cal">
+                <div class="cal__head">
+                  <h3 class="cal__month" id="cal-month" aria-live="polite"></h3>
+                  <div class="cal__nav">
+                    <button type="button" class="nav-btn" id="cal-prev" data-i18n-attrs="aria-label:agenda.prev"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="m14.5 6-6 6 6 6"/></svg></button>
+                    <button type="button" class="nav-btn" id="cal-next" data-i18n-attrs="aria-label:agenda.next"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="m9.5 6 6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+                <div class="cal" id="agenda-days" role="group" data-i18n-attrs="aria-label:agenda.days"></div>
+              </div>
+              <div class="pick__times" id="agenda-times" role="group" data-i18n-attrs="aria-label:agenda.times"></div>
+            </div>
+
+            <form id="agenda-form" class="pane pane--details" novalidate hidden>
+              <button type="button" class="back" id="agenda-back"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="agenda.back">Cambiar horario</span></button>
+              <h3 class="pane__title" id="agenda-details-title" tabindex="-1" data-i18n="agenda.step3">Tus datos</h3>
+              <div class="details">
+                <div class="details__fields">
+                <div class="ag-grid">
+                  <div class="ag-field">
+                    <label for="agenda-name" data-i18n="agenda.name">Nombre</label>
+                    <input type="text" name="name" id="agenda-name" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="agenda-name-err" />
+                    <small class="ag-err" id="agenda-name-err" role="alert"></small>
+                  </div>
+                  <div class="ag-field">
+                    <label for="agenda-email" data-i18n="agenda.email">Correo</label>
+                    <input type="email" name="email" id="agenda-email" autocomplete="email" inputmode="email" required maxlength="160" aria-describedby="agenda-email-err" />
+                    <small class="ag-err" id="agenda-email-err" role="alert"></small>
+                  </div>
+                </div>
+                <fieldset class="topics">
+                  <legend><span data-i18n="agenda.topic">¿De qué quieres hablar?</span> <small data-i18n="agenda.optional">(opcional)</small></legend>
+                  <div class="topics__row">
+                    <label class="topic"><input type="radio" name="topic" value="project" /><span data-i18n="agenda.topic.project">Un proyecto</span></label>
+                    <label class="topic"><input type="radio" name="topic" value="job" /><span data-i18n="agenda.topic.job">Una vacante</span></label>
+                    <label class="topic"><input type="radio" name="topic" value="collab" /><span data-i18n="agenda.topic.collab">Colaborar</span></label>
+                    <label class="topic"><input type="radio" name="topic" value="chat" /><span data-i18n="agenda.topic.chat">Solo conocernos</span></label>
+                  </div>
+                </fieldset>
+                <div class="ag-field">
+                  <label for="agenda-note"><span data-i18n="agenda.note">Cuéntame un poco más</span> <small data-i18n="agenda.optional">(opcional)</small></label>
+                  <textarea name="note" id="agenda-note" rows="2" maxlength="440"></textarea>
+                </div>
+                <label class="ag-hp" aria-hidden="true">
+                  Sitio web
+                  <input type="text" name="website" id="agenda-website" tabindex="-1" autocomplete="off" />
+                </label>
+                <p id="agenda-status" class="ag-status" role="status" aria-live="polite"></p>
+                </div>
+                <aside class="ag-after">
+                  <h4 data-i18n="agenda.after.title">Qué sigue</h4>
+                  <p data-i18n="agenda.after.text">Diego recibe el aviso al instante y te escribe, al correo que dejes, con el enlace de la videollamada.</p>
+                  <p class="ag-fine" data-i18n="agenda.fine">Solo uso tu correo para esta llamada.</p>
+                </aside>
+              </div>
+            </form>
+
+            <div class="pane pane--done" id="agenda-done" hidden>
+              <div class="ticket" id="agenda-ticket">
+                <span class="ticket__stamp" aria-hidden="true" data-i18n="agenda.stamp">AGENDADA</span>
+                <div class="ticket__main">
+                  <h3 class="ticket__title" tabindex="-1" data-i18n="agenda.done.title">Tu cita quedó agendada</h3>
+                  <p class="ticket__text" id="agenda-done-text"></p>
+                  <p class="ticket__date"><span class="ticket__weekday" id="done-weekday"></span><span class="ticket__day" id="done-day"></span><span class="ticket__month" id="done-month"></span></p>
+                  <p class="ticket__time" id="done-time"></p>
+                  <p class="ticket__zone" id="done-zone"></p>
+                </div>
+                <div class="ticket__next">
+                  <a class="cta cta--ghost" id="agenda-gcal" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4M10 15h4"/></svg><span data-i18n="agenda.done.gcal">Añadir a Google Calendar</span></a>
+                  <a class="cta cta--ghost" id="agenda-ics" download="cita-diego-gaxiola.ics" href="#"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><span data-i18n="agenda.done.ics">Descargar .ics</span></a>
+                  <button type="button" class="cta cta--link" id="agenda-again" data-i18n="agenda.done.again">Agendar otra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sheet__stub" id="agenda-stub">
+            <div class="stub__summary" aria-live="polite">
+              <p class="stub__empty" id="stub-empty">Elige una hora</p>
+              <div class="stub__chosen" id="stub-chosen" hidden>
+                <p class="stub__when" id="stub-when"></p>
+                <p class="stub__zone" id="stub-zone"></p>
+              </div>
+            </div>
+            <button type="button" id="agenda-continue" class="cta cta--primary" disabled><span data-i18n="agenda.continue">Continuar</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+            <button type="submit" form="agenda-form" id="agenda-submit" class="cta cta--primary" hidden disabled><span data-i18n="agenda.submit">Confirmar cita</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+
+        <p class="agenda__off" id="agenda-off" hidden>
+          <span data-i18n="agenda.off">La agenda en línea no está disponible ahora mismo. Escríbeme y buscamos un horario.</span>
+          <a class="cta cta--ghost" href="mailto:diego_yesi8@hotmail.com"><span data-i18n="agenda.offCta">Escribir por correo</span></a>
+        </p>
       </div>
-      <p id="empty-state" class="empty-state" hidden data-i18n="vitrina.empty">Primer proyecto en camino — la prensa está calentando.</p>
     </section>
   </main>
 
-  <div id="project-detail" class="project-detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
-    <div class="project-detail__backdrop" data-close></div>
-    <div class="project-detail__panel">
-      <button class="project-detail__close" data-close aria-label="Cerrar detalle">&times;</button>
-      <p class="label" id="detail-eyebrow" data-i18n="detail.eyebrow">LÁMINA</p>
-      <h2 id="detail-title"></h2>
-      <p id="detail-summary" class="project-detail__summary"></p>
-      <p id="detail-description" class="project-detail__description"></p>
-      <div id="detail-tags" class="chip-row"></div>
-      <div class="project-detail__links">
-        <a id="detail-repo" href="#" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="detail.repo">Repo</a>
-        <a id="detail-demo" href="#" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="detail.demo">Demo</a>
+  <footer id="contacto" class="contact" aria-labelledby="contact-title">
+    <div class="contact__inner">
+      <div class="contact__head">
+        <h2 class="section-title" id="contact-title" data-split data-i18n="contacto.title">Hablemos</h2>
+        <div class="contact__links" data-reveal>
+          <a href="mailto:diego_yesi8@hotmail.com" class="stamp-link"><span data-i18n="contacto.email">Email</span></a>
+          <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link"><span data-i18n="contacto.linkedin">LinkedIn</span></a>
+          <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link"><span data-i18n="contacto.github">GitHub</span></a>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <footer id="contacto" class="footer-stamp" aria-label="Contacto">
-    <p class="label" data-reveal data-i18n="contacto.eyebrow">05 — CONTACTO</p>
-    <h2 class="section-title" data-reveal style="--reveal-delay: 60ms" data-i18n="contacto.title">Hablemos</h2>
-    <div class="footer-stamp__links" data-reveal style="--reveal-delay: 120ms">
-      <button id="copy-email" class="stamp-link stamp-link--email" type="button" data-email="diego_yesi8@hotmail.com">
-        <span class="stamp-link__label" data-i18n="contacto.email">Email</span>
-        <span class="stamp-link__hint" data-i18n="contacto.copy">Copiar</span>
-      </button>
-      <a href="tel:+526674181199" class="stamp-link">
-        <span class="stamp-link__label">+52 6674181199</span>
-        <span class="stamp-link__hint" data-i18n="contacto.call">Llamar</span>
-      </a>
-      <a href="https://www.linkedin.com/in/diegogax/" target="_blank" rel="noopener" class="stamp-link" data-i18n="contacto.linkedin">LinkedIn</a>
-      <a href="https://github.com/DiegoGaxi" target="_blank" rel="noopener" class="stamp-link" data-i18n="contacto.github">GitHub</a>
+      <p class="contact__meta">© <span id="footer-year"></span> Diego Gaxiola — <span data-i18n="contacto.footer">esta vitrina se actualiza automáticamente vía Lienox, sin redeploy manual.</span></p>
+      <p class="contact__privacy" id="privacy-note" hidden><span id="privacy-text"></span> <button type="button" class="link-btn" id="privacy-toggle"></button></p>
     </div>
-    <p class="footer-stamp__meta">© <span id="footer-year"></span> Diego Gaxiola — <span data-i18n="contacto.footer">esta vitrina se actualiza automáticamente vía Lienox, sin redeploy manual.</span></p>
   </footer>
 
-  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div class="preview" id="project-preview" aria-hidden="true"></div>
 
-  <script type="module" src="./app.js?v=3"></script>
 </body>
 </html>
