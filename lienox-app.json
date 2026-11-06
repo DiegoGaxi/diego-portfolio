@@ -1,0 +1,19 @@
+{
+  "name": "Diego Portfolio",
+  "slug": "diego",
+  "health": "/salud",
+  "environments": {
+    "semiprod": {
+      "start": "bun serve.ts",
+      "port": 10141,
+      "health": "/salud",
+      "env": {
+        "NODE_ENV": "production",
+        "DATA_DIR": "/home/diego/.local/share/diego-portfolio",
+        "LIENOX_CLI": "/home/diego/Escritorio/Dgs/Lienox/lienox-cli/src/index.ts"
+      },
+      "exclude": ["migrations", "cv-spanish.html", "cv-spanish-minimal.html", "CV-Diego-Gaxiola-Espanol.md", "dev-master-prompt.md", "build_cv.py"],
+      "expose": { "mode": "subdomain", "subdomain": "diego" }
+    }
+  }
+}
