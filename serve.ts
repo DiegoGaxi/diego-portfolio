@@ -202,7 +202,11 @@ Bun.serve({
     const rel = normalize(path).replace(/^\/+/, "");
     if (rel.startsWith("..") || hidden.test(rel)) return new Response("No encontrado", { status: 404 });
     const file = Bun.file(join(root, rel));
-    if (await file.exists()) return new Response(file);
+    if (await file.exists()) {
+      // Archivos con huella en el nombre: caché larga. El resto, revalidar siempre (Cloudflare incluido).
+      const hashed = /-[A-Za-z0-9_-]{8}\.(js|css)$/.test(rel);
+      return new Response(file, { headers: { "cache-control": hashed ? "public, max-age=31536000, immutable" : "no-cache" } });
+    }
     return new Response("No encontrado", { status: 404 });
   },
 });

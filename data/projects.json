@@ -1,5 +1,47 @@
 [
   {
+    "id": "f25d87a7-d0a4-5ece-9b7a-1ed653398fa2",
+    "slug": "las-ilusiones",
+    "title": {
+      "es": "Las Ilusiones Residencial — showroom 3D y CRM de una privada",
+      "en": "Las Ilusiones Residencial — 3D showroom and CRM for a gated community"
+    },
+    "summary": {
+      "es": "Showroom web de una privada de 63 lotes en Culiacán: el visitante baja entre nubes, ve la privada levantarse desde su plano, elige un lote, calcula su plan de pagos y agenda por WhatsApp. Detrás, un panel con prospectos, estatus de lotes, precios y métricas.",
+      "en": "Web showroom for a 63-lot gated community in Culiacán: visitors descend through clouds, watch the community rise from its site plan, pick a lot, work out a payment plan and book by WhatsApp. Behind it, a panel with leads, lot status, prices and analytics."
+    },
+    "description_long": {
+      "es": "Antes la privada se vendía con renders sueltos y el plano en PDF: el comprador no sabía dónde quedaba cada lote ni cuánto pagaría, y el vendedor no sabía quién preguntó por qué.\n\nEl showroom es una sola página en 3D ligada al scroll: del cielo al terreno real, la obra se arma calle por calle, hay vistas 360 del acceso y del área social, y termina en un plano interactivo con los 63 lotes fieles al plano de lotificación, coloreados por disponible, apartado o vendido. Al tocar un lote se ven m², precio, enganche, mensualidad y la tabla de amortización, y «Agendar cita» abre WhatsApp con el mensaje listo y registra al prospecto.\n\nEl panel de administración lleva el CRM de prospectos, marca lotes como vendidos con un clic, fija precios y plazos, genera la amortización en PDF y mide hasta dónde llega cada visitante. Hecho con Three.js, GSAP, Bun, Hono y SQLite; los planos DXF se convierten a 3D con Python. Publicado en semiproducción bajo Lienox.",
+      "en": "The community used to be sold with loose renders and a PDF site plan: buyers could not tell where each lot was or what they would pay, and the seller did not know who asked about what.\n\nThe showroom is a single scroll-driven 3D page: from the sky down to the real terrain, the build comes together street by street, there are 360 views of the entrance and the social area, and it ends in an interactive plan with all 63 lots true to the subdivision plan, coloured as available, reserved or sold. Tapping a lot shows its size, price, down payment, monthly payment and amortisation table, and \"Book a visit\" opens WhatsApp with the message ready while recording the lead.\n\nThe admin panel holds the lead CRM, marks lots as sold in one click, sets prices and terms, generates the amortisation PDF and measures how far each visitor gets. Built with Three.js, GSAP, Bun, Hono and SQLite; the DXF plans are converted to 3D with Python. Published in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": "https://lasilusiones.lienox.com",
+    "tags": ["Three.js", "GSAP", "Bun", "Hono", "SQLite", "Python"],
+    "published_at": "2026-11-05T12:00:00-07:00"
+  },
+  {
+    "id": "b7b97498-8075-5255-a5a5-594b967ec02e",
+    "slug": "transportes-sanchez",
+    "title": {
+      "es": "Transportes Sánchez — presentación comercial de una línea de carga",
+      "en": "Transportes Sánchez — sales kit for a freight carrier"
+    },
+    "summary": {
+      "es": "Kit de presentación para una línea de autotransporte familiar de Culiacán: página web con fondo 3D al hacer scroll y mapa animado de rutas hasta la frontera, más PDF, presentación editable y un video 3D de 20 segundos, todo desde un mismo texto maestro.",
+      "en": "A sales kit for a family-run freight carrier from Culiacán: a website with a scroll-driven 3D background and an animated route map up to the border, plus a PDF, an editable deck and a 20-second 3D video, all from one master text."
+    },
+    "description_long": {
+      "es": "Transportes Sánchez lleva 20 años moviendo carga por Sinaloa, Sonora y Baja California, pero no tenía con qué presentarse ante un cliente nuevo.\n\nLa página es de una sola pantalla larga, pensada para el celular: un tractocamión renderizado acompaña el scroll, un mapa traza la ruta de Culiacán a Tijuana, y los botones de llamar, WhatsApp y correo quedan siempre a la mano. Tiene analítica propia sin cookies y un panel privado para ver las visitas.\n\nLas cuatro piezas (web, PDF, presentación y video 3D hecho en Blender con voz y música) comparten un mismo texto maestro para que ningún dato se contradiga. Publicada en semiproducción bajo Lienox.",
+      "en": "Transportes Sánchez has moved freight across Sinaloa, Sonora and Baja California for 20 years, but had nothing to show a new client.\n\nThe site is one long, phone-first page: a rendered tractor-trailer follows the scroll, a map traces the route from Culiacán to Tijuana, and the call, WhatsApp and email buttons are always within reach. It has its own cookie-free analytics and a private panel to see visits.\n\nThe four pieces (website, PDF, deck and a 3D video made in Blender with voice and music) share one master text so no figure contradicts another. Published in semi-production under Lienox."
+    },
+    "cover_image_url": null,
+    "repo_url": null,
+    "demo_url": "https://transportes-sanchez.lienox.com/",
+    "tags": ["Bun", "GSAP", "Blender", "HTML/CSS", "Analytics"],
+    "published_at": "2026-11-03T12:00:00-07:00"
+  },
+  {
     "id": "6187a6b1-2390-51f0-8a22-713264501899",
     "slug": "wacrm",
     "title": { "es": "wacrm — CRM de WhatsApp con bandeja de equipo", "en": "wacrm — WhatsApp CRM with a team inbox" },

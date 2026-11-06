@@ -182,5 +182,51 @@
         }
       }
     ]
+  },
+  "las-ilusiones": {
+    "kind": "desktop",
+    "shots": [
+      {
+        "src": "projects/las-ilusiones/1.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Apertura de Las Ilusiones Residencial: el logotipo sobre un mar de nubes al atardecer",
+          "en": "Las Ilusiones Residencial opening: the logo over a sea of clouds at sunset"
+        }
+      },
+      {
+        "src": "projects/las-ilusiones/2.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Plano interactivo en 3D con los 63 lotes coloreados por estatus y el panel «Elige tu lote»",
+          "en": "Interactive 3D plan with all 63 lots coloured by status and the \"Pick your lot\" panel"
+        }
+      }
+    ]
+  },
+  "transportes-sanchez": {
+    "kind": "desktop",
+    "shots": [
+      {
+        "src": "projects/transportes-sanchez/1.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Portada de Transportes Sánchez: un tractocamión blanco y el titular «Su carga, en manos de quien conoce el camino»",
+          "en": "Transportes Sánchez hero: a white tractor-trailer and the headline \"Your freight, in the hands of those who know the road\""
+        }
+      },
+      {
+        "src": "projects/transportes-sanchez/2.webp",
+        "w": 1280,
+        "h": 800,
+        "alt": {
+          "es": "Mapa animado de rutas de Culiacán a Hermosillo, Mexicali y Tijuana",
+          "en": "Animated route map from Culiacán to Hermosillo, Mexicali and Tijuana"
+        }
+      }
+    ]
   }
 }
